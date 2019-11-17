@@ -68,7 +68,7 @@ namespace RuC.WPF
         public static RoutedCommand ReplaceCommand = new RoutedCommand();
         public static RoutedCommand GotoCommand = new RoutedCommand();
 
-        private const string ProductName = "RuC.WPF";
+        private const string ProductName = "Russian C IDE";
 
         private FindReplace MyFindReplace;
 

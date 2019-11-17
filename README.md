@@ -1,7 +1,7 @@
 # ScintillaNET.WPF
 A WPF Wrapper around the [ScintillaNET v3](https://github.com/jacobslusser/ScintillaNET) control with demo.
 
-![S Cide.W P F](SCide.WPF/Images/SCide.WPF.png)
+![S Cide.W P F](RuC.WPF/Images/SCide.WPF.png)
 
 ### Reference
 

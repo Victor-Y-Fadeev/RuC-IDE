@@ -10,7 +10,7 @@ using System.Diagnostics;
 using ScintillaNET_FindReplaceDialog;
 using Xceed.Wpf.AvalonDock.Layout;
 
-namespace SCide.WPF
+namespace RuC.WPF
 {
     /// <summary>
     /// Interaction logic for DocumentForm.xaml

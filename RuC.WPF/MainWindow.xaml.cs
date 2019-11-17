@@ -10,7 +10,7 @@ using ScintillaNET.WPF;
 using System.Windows.Media;
 using ScintillaNET_FindReplaceDialog;
 
-namespace SCide.WPF
+namespace RuC.WPF
 {
     public partial class MainWindow : Window
     {
@@ -68,7 +68,7 @@ namespace SCide.WPF
         public static RoutedCommand ReplaceCommand = new RoutedCommand();
         public static RoutedCommand GotoCommand = new RoutedCommand();
 
-        private const string ProductName = "SCide.WPF";
+        private const string ProductName = "RuC.WPF";
 
         private FindReplace MyFindReplace;
 
@@ -810,8 +810,8 @@ namespace SCide.WPF
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // DEFAULT FILE
-            OpenFile("../../SCide.WPF/MainWindow.xaml.cs");
-            OpenFile("../../SCide.WPF/DocumentForm.xaml.cs");
+            //OpenFile("../../RuC.WPF/MainWindow.xaml.cs");
+            //OpenFile("../../RuC.WPF/DocumentForm.xaml.cs");
         }
 
         #endregion Methods

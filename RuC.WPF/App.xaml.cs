@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace SCide.WPF
+namespace RuC.WPF
 {
 	/// <summary>
 	/// Interaction logic for App.xaml

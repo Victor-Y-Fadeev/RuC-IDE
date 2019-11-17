@@ -8,8 +8,8 @@
     <ProjectGuid>{1506D901-20A1-46E9-BFE6-1C8496D394E5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SCide.WPF</RootNamespace>
-    <AssemblyName>SCide.WPF</AssemblyName>
+    <RootNamespace>RuC.WPF</RootNamespace>
+    <AssemblyName>RuC.WPF</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisLogFile>bin\Debug\SCide-WPF.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisLogFile>bin\Debug\RuC-WPF.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <ErrorReport>prompt</ErrorReport>
@@ -39,7 +39,7 @@
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisLogFile>bin\Release\SCide-WPF.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisLogFile>bin\Release\RuC-WPF.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <ErrorReport>prompt</ErrorReport>

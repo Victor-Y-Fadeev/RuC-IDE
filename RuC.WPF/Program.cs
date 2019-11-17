@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace SCide.WPF
+namespace RuC.WPF
 {
 	internal static class Program
 	{

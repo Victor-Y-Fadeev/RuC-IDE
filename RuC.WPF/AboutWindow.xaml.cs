@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Reflection;
 
-namespace SCide.WPF
+namespace RuC.WPF
 {
 	public partial class AboutWindow : Window
 	{

@@ -1,6 +1,7 @@
-﻿<Window x:Class="SCide.WPF.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:ad="http://schemas.xceed.com/wpf/xaml/avalondock" xmlns:my="clr-namespace:SCide.WPF" xmlns:sc="http://scintillanet.codeplex.com"
-        Title="MainWindow" Width="860" Height="547"
+﻿<Window x:Class="RuC.WPF.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ad="http://schemas.xceed.com/wpf/xaml/avalondock" xmlns:my="clr-namespace:RuC.WPF" xmlns:sc="http://scintillanet.codeplex.com"
+        Title="Russian C IDE" Width="860" Height="547"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Loaded="Window_Loaded">
     <Window.CommandBindings>
         <CommandBinding Command="{x:Static my:MainWindow.NewFileCommand}" Executed="newMenuItem_Click" />
@@ -72,12 +73,12 @@
                 <MenuItem Header="_File">
                     <MenuItem Name="newMenuItem" Click="newMenuItem_Click" Header="_New">
                         <MenuItem.Icon>
-                            <Image Height="16px" Source="/SCide.WPF;component/Images/ImageFileNew.png" Stretch="Uniform" />
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileNew.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Name="openMenuItem" Click="openMenuItem_Click" Header="_Open...">
                         <MenuItem.Icon>
-                            <Image Height="16px" Source="/SCide.WPF;component/Images/ImageFileOpen.png" Stretch="Uniform" />
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileOpen.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
@@ -85,13 +86,13 @@
                     <Separator />
                     <MenuItem Name="saveMenuItem" Click="saveMenuItem_Click" Header="_Save">
                         <MenuItem.Icon>
-                            <Image Height="16px" Source="/SCide.WPF;component/Images/ImageFileSave.png" Stretch="Uniform" />
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileSave.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Name="saveAsMenuItem" Click="saveAsMenuItem_Click" Header="Save _As..." />
                     <MenuItem Name="saveAllMenuItem" Click="saveAllMenuItem_Click" Header="Save A_ll">
                         <MenuItem.Icon>
-                            <Image Height="16px" Source="/SCide.WPF;component/Images/ImageFileSaveAll.png" Stretch="Uniform" />
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileSaveAll.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
@@ -100,28 +101,28 @@
                 <MenuItem Header="_Edit">
                     <MenuItem Name="undoMenuItem" Click="undoMenuItem_Click" Header="_Undo">
                         <MenuItem.Icon>
-                            <Image Height="16px" Source="/SCide.WPF;component/Images/ImageEditUndo.png" Stretch="Uniform" />
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditUndo.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Name="redoMenuItem" Click="redoMenuItem_Click" Header="_Redo">
                         <MenuItem.Icon>
-                            <Image Height="16px" Source="/SCide.WPF;component/Images/ImageEditRedo.png" Stretch="Uniform" />
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditRedo.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
                     <MenuItem Name="cutMenuItem" Click="cutMenuItem_Click" Header="Cu_t">
                         <MenuItem.Icon>
-                            <Image Height="16px" Source="/SCide.WPF;component/Images/ImageEditCut.png" Stretch="Uniform" />
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditCut.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Name="copyMenuItem" Click="copyMenuItem_Click" Header="_Copy">
                         <MenuItem.Icon>
-                            <Image Height="16px" Source="/SCide.WPF;component/Images/ImageEditCopy.png" Stretch="Uniform" />
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditCopy.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem Name="pasteMenuItem" Click="pasteMenuItem_Click" Header="_Paste">
                         <MenuItem.Icon>
-                            <Image Height="16px" Source="/SCide.WPF;component/Images/ImageEditPaste.png" Stretch="Uniform" />
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditPaste.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
@@ -191,57 +192,57 @@
                         <Button Width="23px" Height="22px" Padding="0px"
                                 Click="newMenuItem_Click" ToolTip="New File (Ctrl+N)">
                             <StackPanel>
-                                <Image Height="16px" Source="/SCide.WPF;component/Images/ImageFileNew.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileNew.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Button Width="23px" Height="22px" Padding="0px"
                                 Click="openMenuItem_Click" ToolTip="Open File (Ctrl+O)">
                             <StackPanel>
-                                <Image Height="16px" Source="/SCide.WPF;component/Images/ImageFileOpen.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileOpen.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Button Width="23px" Height="22px" Padding="0px"
                                 Click="saveMenuItem_Click" ToolTip="Save File (Ctrl+S)">
                             <StackPanel>
-                                <Image Height="16px" Source="/SCide.WPF;component/Images/ImageFileSave.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileSave.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Button Width="23px" Height="22px" Padding="0px"
                                 Click="saveAllMenuItem_Click" ToolTip="Save All Files (Ctrl+Shift+S)">
                             <StackPanel>
-                                <Image Height="16px" Source="/SCide.WPF;component/Images/ImageFileSaveAll.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileSaveAll.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Separator />
                         <Button Width="23px" Height="22px" Padding="0px"
                                 Click="cutMenuItem_Click" ToolTip="Cut (Ctrl+X)">
                             <StackPanel>
-                                <Image Height="16px" Source="/SCide.WPF;component/Images/ImageEditCut.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditCut.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Button Width="23px" Height="22px" Padding="0px"
                                 Click="copyMenuItem_Click" ToolTip="Copy (Ctrl+C)">
                             <StackPanel>
-                                <Image Height="16px" Source="/SCide.WPF;component/Images/ImageEditCopy.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditCopy.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Button Width="23px" Height="22px" Padding="0px"
                                 Click="pasteMenuItem_Click" ToolTip="Paste (Ctrl+V)">
                             <StackPanel>
-                                <Image Height="16px" Source="/SCide.WPF;component/Images/ImageEditPaste.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditPaste.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Separator />
                         <Button Width="23px" Height="22px" Padding="0px"
                                 Click="undoMenuItem_Click" ToolTip="Undo (Ctrl+Z)">
                             <StackPanel>
-                                <Image Height="16px" Source="/SCide.WPF;component/Images/ImageEditUndo.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditUndo.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Button Width="23px" Height="22px" Padding="0px"
                                 Click="redoMenuItem_Click" ToolTip="Redo (Ctrl+Y)">
                             <StackPanel>
-                                <Image Height="16px" Source="/SCide.WPF;component/Images/ImageEditRedo.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditRedo.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                     </ToolBar>

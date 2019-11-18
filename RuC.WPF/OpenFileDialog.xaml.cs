@@ -6,13 +6,13 @@ using System.Collections.Generic;
 
 using Win32 = Microsoft.Win32;
 
-namespace SCide.WPF
+namespace RuC.WPF
 {
-	public partial class SaveFileDialog : UserControl
+	public partial class OpenFileDialog : UserControl
 	{
-		private readonly Win32.SaveFileDialog mInnerDialog = new Win32.SaveFileDialog();
+		private readonly Win32.OpenFileDialog mInnerDialog = new Win32.OpenFileDialog();
 
-		public SaveFileDialog()
+		public OpenFileDialog()
 		{
 			InitializeComponent();
 		}
@@ -31,11 +31,6 @@ namespace SCide.WPF
 		{
 			get { return mInnerDialog.CheckPathExists; }
 			set { mInnerDialog.CheckPathExists = value; }
-		}
-		public bool CreatePrompt
-		{
-			get { return mInnerDialog.CreatePrompt; }
-			set { mInnerDialog.CreatePrompt = value; }
 		}
 		public IList<Win32.FileDialogCustomPlace> CustomPlaces
 		{
@@ -57,6 +52,7 @@ namespace SCide.WPF
 			get { return mInnerDialog.FileName; }
 			set { mInnerDialog.FileName = value; }
 		}
+		public string[] FileNames { get { return mInnerDialog.FileNames; } }
 		public string Filter
 		{
 			get { return mInnerDialog.Filter; }
@@ -72,13 +68,24 @@ namespace SCide.WPF
 			get { return mInnerDialog.InitialDirectory; }
 			set { mInnerDialog.InitialDirectory = value; }
 		}
-		public bool OverwritePrompt
+		public bool Multiselect
 		{
-			get { return mInnerDialog.OverwritePrompt; }
-			set { mInnerDialog.OverwritePrompt = value; }
+			get { return mInnerDialog.Multiselect; }
+			set { mInnerDialog.Multiselect = value; }
+		}
+		public bool ReadOnlyChecked
+		{
+			get { return mInnerDialog.ReadOnlyChecked; }
+			set { mInnerDialog.ReadOnlyChecked = value; }
 		}
 		public string SafeFileName { get { return mInnerDialog.SafeFileName; } }
-		new public object Tag
+		public string[] SafeFileNames { get { return mInnerDialog.SafeFileNames; } }
+		public bool ShowReadOnly
+		{
+			get { return mInnerDialog.ShowReadOnly; }
+			set { mInnerDialog.ShowReadOnly = value; }
+		}
+		new public object Tag 
 		{
 			get { return mInnerDialog.Tag; }
 			set { mInnerDialog.Tag = value; }
@@ -95,6 +102,7 @@ namespace SCide.WPF
 		}
 
 		public Stream OpenFile() { return mInnerDialog.OpenFile(); }
+		public Stream[] OpenFiles() { return mInnerDialog.OpenFiles(); }
 		public void Reset() { mInnerDialog.Reset(); }
 		public bool? ShowDialog() { return mInnerDialog.ShowDialog(); }
 		public bool? ShowDialog(Window w) { return mInnerDialog.ShowDialog(w); }

@@ -196,59 +196,50 @@
         <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ToolBarPanel Name="toolStrip" HorizontalAlignment="Stretch" DockPanel.Dock="Top">
                 <ToolBarTray>
-                    <ToolBar Height="25px" ToolBarTray.IsLocked="True">
-                        <Button Width="23px" Height="22px" Padding="0px"
-                                Click="newMenuItem_Click" ToolTip="New File (Ctrl+N)">
+                    <ToolBar ToolBarTray.IsLocked="True">
+                        <Button Click="newMenuItem_Click" ToolTip="New File (Ctrl+N)">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileNew.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Width="23px" Height="22px" Padding="0px"
-                                Click="openMenuItem_Click" ToolTip="Open File (Ctrl+O)">
+                        <Button Click="openMenuItem_Click" ToolTip="Open File (Ctrl+O)">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileOpen.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Width="23px" Height="22px" Padding="0px"
-                                Click="saveMenuItem_Click" ToolTip="Save File (Ctrl+S)">
+                        <Button Click="saveMenuItem_Click" ToolTip="Save File (Ctrl+S)">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileSave.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Width="23px" Height="22px" Padding="0px"
-                                Click="saveAllMenuItem_Click" ToolTip="Save All Files (Ctrl+Shift+S)">
+                        <Button Click="saveAllMenuItem_Click" ToolTip="Save All Files (Ctrl+Shift+S)">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileSaveAll.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Separator />
-                        <Button Width="23px" Height="22px" Padding="0px"
-                                Click="cutMenuItem_Click" ToolTip="Cut (Ctrl+X)">
+                        <Button Click="cutMenuItem_Click" ToolTip="Cut (Ctrl+X)">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditCut.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Width="23px" Height="22px" Padding="0px"
-                                Click="copyMenuItem_Click" ToolTip="Copy (Ctrl+C)">
+                        <Button Click="copyMenuItem_Click" ToolTip="Copy (Ctrl+C)">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditCopy.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Width="23px" Height="22px" Padding="0px"
-                                Click="pasteMenuItem_Click" ToolTip="Paste (Ctrl+V)">
+                        <Button Click="pasteMenuItem_Click" ToolTip="Paste (Ctrl+V)">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditPaste.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Separator />
-                        <Button Width="23px" Height="22px" Padding="0px"
-                                Click="undoMenuItem_Click" ToolTip="Undo (Ctrl+Z)">
+                        <Button Click="undoMenuItem_Click" ToolTip="Undo (Ctrl+Z)">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditUndo.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Width="23px" Height="22px" Padding="0px"
-                                Click="redoMenuItem_Click" ToolTip="Redo (Ctrl+Y)">
+                        <Button Click="redoMenuItem_Click" ToolTip="Redo (Ctrl+Y)">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditRedo.png" Stretch="Uniform" />
                             </StackPanel>
@@ -257,7 +248,7 @@
                 </ToolBarTray>
             </ToolBarPanel>
             <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
-                <StatusBar Name="statusStrip" Height="22px" HorizontalAlignment="Stretch"
+                <StatusBar Name="statusStrip" HorizontalAlignment="Stretch"
                            DockPanel.Dock="Bottom">
                     <StatusBarItem />
                 </StatusBar>

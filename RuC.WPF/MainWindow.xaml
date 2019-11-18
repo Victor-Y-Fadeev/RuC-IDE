@@ -1,7 +1,7 @@
 ﻿<Controls:MetroWindow x:Class="RuC.WPF.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ad="http://schemas.xceed.com/wpf/xaml/avalondock" xmlns:my="clr-namespace:RuC.WPF" xmlns:sc="http://scintillanet.codeplex.com"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="Russian C IDE" Width="800" Height="600"
+        Title="MainWindow" Width="800" Height="600"
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Loaded="Window_Loaded">
     <Window.Resources>

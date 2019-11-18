@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace RuC.WPF
 {
-	public partial class AboutWindow : Window
+	public partial class AboutWindow
 	{
 		private string AssemblyTitle
 		{

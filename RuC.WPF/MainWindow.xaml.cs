@@ -12,7 +12,7 @@ using ScintillaNET_FindReplaceDialog;
 
 namespace RuC.WPF
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         #region Fields
 

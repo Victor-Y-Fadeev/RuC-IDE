@@ -1,6 +1,7 @@
-﻿<Window x:Class="RuC.WPF.AboutWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AboutWindow" Width="441" Height="308"
-        Background="#FFD4D0C8">
+﻿<Controls:MetroWindow x:Class="RuC.WPF.AboutWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="AboutWindow" Width="440" Height="300"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*" />
@@ -15,7 +16,7 @@
             <ColumnDefinition Width="67*" />
         </Grid.ColumnDefinitions>
         <Image Grid.Row="0" Grid.RowSpan="6" Grid.Column="0"
-               Source="/RuC.WPF;component/Images/Screenshot.png" Stretch="None" />
+               Source="/RuC.WPF;component/Images/Logo.png" Stretch="None" />
         <Label Name="productNameLabel" Grid.Row="0" Grid.Column="1"
                VerticalContentAlignment="Center" Content="Product Name" FontWeight="Bold" />
         <Label Name="versionLabel" Grid.Row="1" Grid.Column="1"
@@ -28,8 +29,5 @@
                  AllowDrop="False" Background="#00000000" Focusable="False"
                  IsReadOnly="True" IsTabStop="False" IsUndoEnabled="False"
                  Text="Description" VerticalScrollBarVisibility="Visible" />
-        <Button Name="okButton" Grid.Row="5" Grid.Column="1"
-                Width="75px" Height="23px" HorizontalAlignment="Right"
-                VerticalAlignment="Center" Content="OK" />
     </Grid>
-</Window>
+</Controls:MetroWindow>

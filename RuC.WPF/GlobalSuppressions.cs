@@ -3,4 +3,4 @@
 // Project-level suppressions either have no target or are given
 // a specific target and scoped to a namespace, type, member, etc.
 
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Potential Code Quality Issues", "RECS0110:Condition is always 'true' or always 'false'", Justification = "To maintain consistancy with the ScintillaNet Demo project.", Scope = "member", Target = "~M:RuC.WPF.MainWindow.InitCodeFolding(ScintillaNET.WPF.ScintillaWPF)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Potential Code Quality Issues", "RECS0110:Condition is always 'true' or always 'false'", Justification = "To maintain consistancy with the ScintillaNet RuC project.", Scope = "member", Target = "~M:RuC.WPF.MainWindow.InitCodeFolding(ScintillaNET.WPF.ScintillaWPF)")]

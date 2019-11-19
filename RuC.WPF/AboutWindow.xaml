@@ -16,7 +16,7 @@
             <ColumnDefinition Width="67*" />
         </Grid.ColumnDefinitions>
         <Image Grid.Row="0" Grid.RowSpan="6" Grid.Column="0"
-               Source="/RuC.WPF;component/Images/Screenshot.png" Stretch="None" />
+               Source="/RuC.WPF;component/Images/Logo.png" Stretch="None" />
         <Label Name="productNameLabel" Grid.Row="0" Grid.Column="1"
                VerticalContentAlignment="Center" Content="Product Name" FontWeight="Bold" />
         <Label Name="versionLabel" Grid.Row="1" Grid.Column="1"

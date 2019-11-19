@@ -202,7 +202,7 @@
     <Resource Include="Images\ImageFileSaveAll.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Screenshot.png" />
+    <Resource Include="Images\Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

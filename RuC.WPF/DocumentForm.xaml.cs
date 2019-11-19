@@ -35,25 +35,10 @@ namespace RuC.WPF
 
         private void Scintilla_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
+            switch (e.Button)
             {
-                switch (e.Button)
-                {
-                    case System.Windows.Forms.MouseButtons.Left:
-                        if (FindReplace == null) break;
-
-                        //Clear current highlights
-                        FindReplace.ClearAllHighlights();
-
-                        //Highlight identical text
-                        string sWord = Scintilla.GetWordFromPosition(Scintilla.CurrentPosition);
-                        if (!string.IsNullOrEmpty(sWord))
-                            FindReplace.FindAll(sWord, false, true);
-
-                        break;
-
-                    default:
-                        break;
-                }
+                default:
+                    break;
             }
         }
 

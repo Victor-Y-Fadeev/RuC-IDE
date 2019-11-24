@@ -83,7 +83,6 @@ namespace RuC.WPF
 
         public MainWindow()
         {
-            Xceed.Wpf.Toolkit.Licenser.LicenseKey = "WTK38-P00GR-RHFGW-0GSA";
             InitializeComponent();
             // TODO Why this has to be here, I have no idea.
             // All I know is that it doesn't work properly

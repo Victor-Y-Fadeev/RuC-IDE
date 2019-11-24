@@ -14,6 +14,7 @@ namespace RuC.WPF
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            Xceed.Wpf.Toolkit.Licenser.LicenseKey = "WTK38-P00GR-RHFGW-0GSA";
             Xceed.Wpf.Themes.Windows10.Licenser.LicenseKey = "XPT30-Y79PR-8ZP0H-WG0A";
             base.OnStartup(e);
         }

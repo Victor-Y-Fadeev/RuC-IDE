@@ -72,7 +72,7 @@
     </Window.InputBindings>
     <Controls:MetroWindow.LeftWindowCommands>
         <Controls:WindowCommands>
-            <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top" DockPanel.Dock="Top" Background="Transparent">
+            <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="Transparent">
                 <MenuItem Header="_File" Background="Transparent" Foreground="White">
                     <MenuItem Name="newMenuItem" Click="newMenuItem_Click" Header="_New" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem.Icon>

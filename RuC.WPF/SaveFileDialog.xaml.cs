@@ -67,7 +67,7 @@ namespace RuC.WPF
 			get { return mInnerDialog.FilterIndex; }
 			set { mInnerDialog.FilterIndex = value; }
 		}
-		public string InitialDirectory 
+		public string InitialDirectory
 		{
 			get { return mInnerDialog.InitialDirectory; }
 			set { mInnerDialog.InitialDirectory = value; }

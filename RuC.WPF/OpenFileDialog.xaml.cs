@@ -63,7 +63,7 @@ namespace RuC.WPF
 			get { return mInnerDialog.FilterIndex; }
 			set { mInnerDialog.FilterIndex = value; }
 		}
-		public string InitialDirectory 
+		public string InitialDirectory
 		{
 			get { return mInnerDialog.InitialDirectory; }
 			set { mInnerDialog.InitialDirectory = value; }
@@ -85,7 +85,7 @@ namespace RuC.WPF
 			get { return mInnerDialog.ShowReadOnly; }
 			set { mInnerDialog.ShowReadOnly = value; }
 		}
-		new public object Tag 
+		new public object Tag
 		{
 			get { return mInnerDialog.Tag; }
 			set { mInnerDialog.Tag = value; }

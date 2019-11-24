@@ -254,7 +254,7 @@
                 </StatusBar>
                 <ad:DockingManager Name="dockPanel" ActiveContentChanged="dockPanel_ActiveContentChanged">
                     <ad:DockingManager.Theme>
-                        <ad:VS2010Theme />
+                        <ad:Windows10Theme />
                     </ad:DockingManager.Theme>
                     <ad:LayoutRoot>
                         <ad:LayoutPanel>

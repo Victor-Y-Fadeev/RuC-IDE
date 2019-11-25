@@ -88,7 +88,7 @@ namespace RuC.WPF
 		public AboutWindow()
 		{
 			InitializeComponent();
-			this.Title = "About " + AssemblyTitle;
+			//this.Title = "About " + AssemblyTitle;
 			this.productNameLabel.Content = AssemblyProduct;
 			this.versionLabel.Content = "Version " + AssemblyVersion;
 			this.copyrightLabel.Content = AssemblyCopyright;

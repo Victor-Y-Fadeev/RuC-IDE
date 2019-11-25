@@ -3,6 +3,8 @@
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
     <!-- Main window -->
+    <v:String x:Key="m_main_window">Russian C IDE</v:String>
+
     <v:String x:Key="m_file">_File</v:String>
     <v:String x:Key="m_new">_New</v:String>
     <v:String x:Key="m_open">_Open...</v:String>
@@ -56,4 +58,18 @@
     <v:String x:Key="m_close_all">C_lose All</v:String>
     <v:String x:Key="m_help">_Help</v:String>
     <v:String x:Key="m_about">_About</v:String>
+
+    <v:String x:Key="m_ctrl_n">New File (Ctrl+N)</v:String>
+    <v:String x:Key="m_ctrl_o">Open File (Ctrl+O)</v:String>
+    <v:String x:Key="m_ctrl_s">Save File (Ctrl+S)</v:String>
+    <v:String x:Key="m_ctrl_shift_s">Save All Files (Ctrl+Shift+S)</v:String>
+    <v:String x:Key="m_ctrl_x">Cut (Ctrl+X)</v:String>
+    <v:String x:Key="m_ctrl_c">Copy (Ctrl+C)</v:String>
+    <v:String x:Key="m_ctrl_v">Paste (Ctrl+V)</v:String>
+    <v:String x:Key="m_ctrl_z">Undo (Ctrl+Z)</v:String>
+    <v:String x:Key="m_ctrl_y">Redo (Ctrl+Y)</v:String>
+
+    <!-- Main window -->
+    <v:String x:Key="m_about_window">About Russian C IDE</v:String>
+    
 </ResourceDictionary>

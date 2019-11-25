@@ -1,7 +1,7 @@
 ﻿<Controls:MetroWindow x:Class="RuC.WPF.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ad="http://schemas.xceed.com/wpf/xaml/avalondock" xmlns:my="clr-namespace:RuC.WPF" xmlns:sc="http://scintillanet.codeplex.com"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="MainWindow" Width="800" Height="600"
+        Title="{DynamicResource m_main_window}" Width="800" Height="600"
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Loaded="Window_Loaded">
     <Window.Resources>
@@ -197,49 +197,49 @@
             <ToolBarPanel Name="toolStrip" HorizontalAlignment="Stretch" DockPanel.Dock="Top">
                 <ToolBarTray>
                     <ToolBar ToolBarTray.IsLocked="True">
-                        <Button Click="newMenuItem_Click" ToolTip="New File (Ctrl+N)">
+                        <Button Click="newMenuItem_Click" ToolTip="{DynamicResource m_ctrl_n}">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileNew.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Click="openMenuItem_Click" ToolTip="Open File (Ctrl+O)">
+                        <Button Click="openMenuItem_Click" ToolTip="{DynamicResource m_ctrl_o}">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileOpen.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Click="saveMenuItem_Click" ToolTip="Save File (Ctrl+S)">
+                        <Button Click="saveMenuItem_Click" ToolTip="{DynamicResource m_ctrl_s}">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileSave.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Click="saveAllMenuItem_Click" ToolTip="Save All Files (Ctrl+Shift+S)">
+                        <Button Click="saveAllMenuItem_Click" ToolTip="{DynamicResource m_ctrl_shift_s}">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileSaveAll.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Separator />
-                        <Button Click="cutMenuItem_Click" ToolTip="Cut (Ctrl+X)">
+                        <Button Click="cutMenuItem_Click" ToolTip="{DynamicResource m_ctrl_x}">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditCut.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Click="copyMenuItem_Click" ToolTip="Copy (Ctrl+C)">
+                        <Button Click="copyMenuItem_Click" ToolTip="{DynamicResource m_ctrl_c}">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditCopy.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Click="pasteMenuItem_Click" ToolTip="Paste (Ctrl+V)">
+                        <Button Click="pasteMenuItem_Click" ToolTip="{DynamicResource m_ctrl_x}">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditPaste.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Separator />
-                        <Button Click="undoMenuItem_Click" ToolTip="Undo (Ctrl+Z)">
+                        <Button Click="undoMenuItem_Click" ToolTip="{DynamicResource m_ctrl_z}">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditUndo.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Click="redoMenuItem_Click" ToolTip="Redo (Ctrl+Y)">
+                        <Button Click="redoMenuItem_Click" ToolTip="{DynamicResource m_ctrl_y}">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditRedo.png" Stretch="Uniform" />
                             </StackPanel>

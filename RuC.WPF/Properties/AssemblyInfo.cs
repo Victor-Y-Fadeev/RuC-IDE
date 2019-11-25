@@ -22,7 +22,7 @@ using System.Runtime.CompilerServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3519d7e0-2593-46c7-b329-f785bfef2f43")]
+[assembly: Guid("61cb653a-b472-4d3c-9e1c-8c0cfd199366")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -34,13 +34,13 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyVersion("1.0.0.*")]
 [assembly: AssemblyFileVersion("1.0.0")]
 [assembly: AssemblyInformationalVersion("2.6.0.0")]
-[assembly: NeutralResourcesLanguageAttribute("ru-RU")]
+[assembly: NeutralResourcesLanguageAttribute("en-US")]
 
 [assembly: ThemeInfo(
 	ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located
-	//(used if a resource is not found in the page, 
-	// or application resource dictionaries)
+									 //(used if a resource is not found in the page, 
+									 // or application resource dictionaries)
 	ResourceDictionaryLocation.SourceAssembly //where the generic resource dictionary is located
-	//(used if a resource is not found in the page, 
-	// app, or any theme specific resource dictionaries)
+											  //(used if a resource is not found in the page, 
+											  // app, or any theme specific resource dictionaries)
 )]

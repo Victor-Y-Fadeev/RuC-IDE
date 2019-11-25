@@ -1,0 +1,75 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Main window -->
+    <v:String x:Key="m_MainWindow">Russian C IDE</v:String>
+
+    <v:String x:Key="m_File">_Файл</v:String>
+    <v:String x:Key="m_New">Созд_ать</v:String>
+    <v:String x:Key="m_Open">_Открыть...</v:String>
+    <v:String x:Key="m_Close">Закр_ыть</v:String>
+    <v:String x:Key="m_Save">Сохранит_ь</v:String>
+    <v:String x:Key="m_SaveAs">Сохранить _как...</v:String>
+    <v:String x:Key="m_SaveAll">Сох_ранить все</v:String>
+    <v:String x:Key="m_Exit">Вы_ход</v:String>
+    <v:String x:Key="m_Edit">_Правка</v:String>
+    <v:String x:Key="m_Undo">_Отменить</v:String>
+    <v:String x:Key="m_Redo">Верну_ть</v:String>
+    <v:String x:Key="m_Cut">Вы_резать</v:String>
+    <v:String x:Key="m_Copy">_Копировать</v:String>
+    <v:String x:Key="m_Paste">В_ставить</v:String>
+    <v:String x:Key="m_SelectLine">Выделить с_троку</v:String>
+    <v:String x:Key="m_SelectAll">В_ыделить все</v:String>
+    <v:String x:Key="m_ClearSelection">Очистить выделение</v:String>
+    <v:String x:Key="m_FindAndReplace">_Найти и заменить</v:String>
+    <v:String x:Key="m_IncrementalSearch">_Интеллектуальный поиск</v:String>
+    <v:String x:Key="m_Find">_Найти</v:String>
+    <v:String x:Key="m_Replace">_Заменить</v:String>
+    <v:String x:Key="m_FindInFiles">Найти в файла_х</v:String>
+    <v:String x:Key="m_ReplaceInFiles">За_менить в файлах</v:String>
+    <v:String x:Key="m_GoTo">_Перейти</v:String>
+    <v:String x:Key="m_Bookmarks">_Закладки</v:String>
+    <v:String x:Key="m_ToggleBookmark">_Включить или отключить закладку</v:String>
+    <v:String x:Key="m_PreviousBookmark">П_редыдущая закладка</v:String>
+    <v:String x:Key="m_NextBookmark">Следую_щая закладка</v:String>
+    <v:String x:Key="m_ClearBookmarks">_Удалить закладки</v:String>
+    <v:String x:Key="m_Advanced">Допо_лнительно</v:String>
+    <v:String x:Key="m_MakeUpperCase">Все прописн_ые</v:String>
+    <v:String x:Key="m_MakeLowerCase">Все стро_чные</v:String>
+    <v:String x:Key="m_View">_Вид</v:String>
+    <v:String x:Key="m_ToolBar">Панель _инструментов</v:String>
+    <v:String x:Key="m_StatusBar">С_трока состояния</v:String>
+    <v:String x:Key="m_Whitespace">Отображение пробелов</v:String>
+    <v:String x:Key="m_WordWrap">Пе_реносить по словам</v:String>
+    <v:String x:Key="m_EndOfLine">Символы конца строки</v:String>
+    <v:String x:Key="m_ZoomIn">_Увеличить</v:String>
+    <v:String x:Key="m_ZoomOut">_Уменьшить</v:String>
+    <v:String x:Key="m_ResetZoom">_Сбросить масштаб</v:String>
+    <v:String x:Key="m_LineNumbers">_Номера строк</v:String>
+    <v:String x:Key="m_FoldLevel">Сверну_ть сегмент</v:String>
+    <v:String x:Key="m_UnfoldLevel">Развернуть сегмент</v:String>
+    <v:String x:Key="m_FoldAll">Свернуть _все сегменты</v:String>
+    <v:String x:Key="m_UnfoldAll">Развернуть все сегменты</v:String>
+    <v:String x:Key="m_Window">_Окно</v:String>
+    <v:String x:Key="m_BookmarkWindow">_Закрепить вкладку</v:String>
+    <v:String x:Key="m_FindResults">_Результаты поиска</v:String>
+    <!-- <v:String x:Key="m_Close">_Close</v:String> -->
+    <v:String x:Key="m_CloseAll">_Закрыть все</v:String>
+    <v:String x:Key="m_Help">Справ_ка</v:String>
+    <v:String x:Key="m_About">_О программе</v:String>
+
+    <v:String x:Key="m_CtrlN">Создать файл (Ctrl+N)</v:String>
+    <v:String x:Key="m_CtrlO">Открыть файл (Ctrl+O)</v:String>
+    <v:String x:Key="m_CtrlS">Сохранить файл (Ctrl+S)</v:String>
+    <v:String x:Key="m_CtrlShiftS">Сохранить все файлы (Ctrl+Shift+S)</v:String>
+    <v:String x:Key="m_CtrlX">Вырезать (Ctrl+X)</v:String>
+    <v:String x:Key="m_CtrlC">Копировать (Ctrl+C)</v:String>
+    <v:String x:Key="m_CtrlV">Вставить (Ctrl+V)</v:String>
+    <v:String x:Key="m_CtrlZ">Отменить (Ctrl+Z)</v:String>
+    <v:String x:Key="m_CtrlY">Вернуть (Ctrl+Y)</v:String>
+
+    <!-- Main window -->
+    <v:String x:Key="m_AboutWindow">О программе Russian C IDE</v:String>
+
+</ResourceDictionary>

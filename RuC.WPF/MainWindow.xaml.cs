@@ -807,7 +807,7 @@ namespace RuC.WPF
 
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
-			this.Title = ProductName;
+			//this.Title = ProductName;
 			this.TitleAlignment = HorizontalAlignment.Center;
 
 			// DEFAULT FILE

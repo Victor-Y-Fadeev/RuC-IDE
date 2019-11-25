@@ -36,7 +36,7 @@ using System.Windows.Markup;
 [assembly: AssemblyVersion("1.0.0.*")]
 [assembly: AssemblyFileVersion("1.0.0")]
 [assembly: AssemblyInformationalVersion("2.6.0.0")]
-[assembly: NeutralResourcesLanguageAttribute("ru-RU")]
+[assembly: NeutralResourcesLanguageAttribute("en-US")]
 
 
 

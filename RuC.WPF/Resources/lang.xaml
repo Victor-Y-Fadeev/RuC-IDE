@@ -1,0 +1,75 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Main window -->
+    <v:String x:Key="m_MainWindow">Russian C IDE</v:String>
+
+    <v:String x:Key="m_File">_File</v:String>
+    <v:String x:Key="m_New">_New</v:String>
+    <v:String x:Key="m_Open">_Open...</v:String>
+    <v:String x:Key="m_Close">_Close</v:String>
+    <v:String x:Key="m_Save">_Save</v:String>
+    <v:String x:Key="m_SaveAs">Save _As...</v:String>
+    <v:String x:Key="m_SaveAll">Save A_ll</v:String>
+    <v:String x:Key="m_Exit">E_xit</v:String>
+    <v:String x:Key="m_Edit">_Edit</v:String>
+    <v:String x:Key="m_Undo">_Undo</v:String>
+    <v:String x:Key="m_Redo">_Redo</v:String>
+    <v:String x:Key="m_Cut">Cu_t</v:String>
+    <v:String x:Key="m_Copy">_Copy</v:String>
+    <v:String x:Key="m_Paste">_Paste</v:String>
+    <v:String x:Key="m_SelectLine">Select _Line</v:String>
+    <v:String x:Key="m_SelectAll">Select _All</v:String>
+    <v:String x:Key="m_ClearSelection">Clear Selection</v:String>
+    <v:String x:Key="m_FindAndReplace">_Find and Replace</v:String>
+    <v:String x:Key="m_IncrementalSearch">_Incremental Search</v:String>
+    <v:String x:Key="m_Find">_Find</v:String>
+    <v:String x:Key="m_Replace">_Replace</v:String>
+    <v:String x:Key="m_FindInFiles">F_ind in Files</v:String>
+    <v:String x:Key="m_ReplaceInFiles">Replace in File_s</v:String>
+    <v:String x:Key="m_GoTo">_Go To</v:String>
+    <v:String x:Key="m_Bookmarks">Boo_kmarks</v:String>
+    <v:String x:Key="m_ToggleBookmark">_Toggle Bookmark</v:String>
+    <v:String x:Key="m_PreviousBookmark">_Previous Bookmark</v:String>
+    <v:String x:Key="m_NextBookmark">Next _Bookmark</v:String>
+    <v:String x:Key="m_ClearBookmarks">_Clear Bookmarks</v:String>
+    <v:String x:Key="m_Advanced">Ad_vanced</v:String>
+    <v:String x:Key="m_MakeUpperCase">Make _Upper Case</v:String>
+    <v:String x:Key="m_MakeLowerCase">Make _Lower Case</v:String>
+    <v:String x:Key="m_View">_View</v:String>
+    <v:String x:Key="m_ToolBar">Tool Bar</v:String>
+    <v:String x:Key="m_StatusBar">Status Bar</v:String>
+    <v:String x:Key="m_Whitespace">W_hitespace</v:String>
+    <v:String x:Key="m_WordWrap">_Word Wrap</v:String>
+    <v:String x:Key="m_EndOfLine">_End of Line</v:String>
+    <v:String x:Key="m_ZoomIn">Zoom _In</v:String>
+    <v:String x:Key="m_ZoomOut">Zoom _Out</v:String>
+    <v:String x:Key="m_ResetZoom">Reset _Zoom</v:String>
+    <v:String x:Key="m_LineNumbers">Line Nu_mbers</v:String>
+    <v:String x:Key="m_FoldLevel">_Fold Level</v:String>
+    <v:String x:Key="m_UnfoldLevel">_Unfold Level</v:String>
+    <v:String x:Key="m_FoldAll">Fold _All</v:String>
+    <v:String x:Key="m_UnfoldAll">Unfold A_ll</v:String>
+    <v:String x:Key="m_Window">_Window</v:String>
+    <v:String x:Key="m_BookmarkWindow">_Bookmark Window</v:String>
+    <v:String x:Key="m_FindResults">_Find Results</v:String>
+    <!-- <v:String x:Key="m_Close">_Close</v:String> -->
+    <v:String x:Key="m_CloseAll">C_lose All</v:String>
+    <v:String x:Key="m_Help">_Help</v:String>
+    <v:String x:Key="m_About">_About</v:String>
+
+    <v:String x:Key="m_CtrlN">New File (Ctrl+N)</v:String>
+    <v:String x:Key="m_CtrlO">Open File (Ctrl+O)</v:String>
+    <v:String x:Key="m_CtrlS">Save File (Ctrl+S)</v:String>
+    <v:String x:Key="m_CtrlShiftS">Save All Files (Ctrl+Shift+S)</v:String>
+    <v:String x:Key="m_CtrlX">Cut (Ctrl+X)</v:String>
+    <v:String x:Key="m_CtrlC">Copy (Ctrl+C)</v:String>
+    <v:String x:Key="m_CtrlV">Paste (Ctrl+V)</v:String>
+    <v:String x:Key="m_CtrlZ">Undo (Ctrl+Z)</v:String>
+    <v:String x:Key="m_CtrlY">Redo (Ctrl+Y)</v:String>
+
+    <!-- Main window -->
+    <v:String x:Key="m_AboutWindow">About Russian C IDE</v:String>
+    
+</ResourceDictionary>

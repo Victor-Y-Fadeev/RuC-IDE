@@ -73,120 +73,120 @@
     <Controls:MetroWindow.LeftWindowCommands>
         <Controls:WindowCommands>
             <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="Transparent">
-                <MenuItem Header="_File" Background="Transparent" Foreground="White">
-                    <MenuItem Name="newMenuItem" Click="newMenuItem_Click" Header="_New" Foreground="{StaticResource menuItemBrush}">
+                <MenuItem Header="{DynamicResource m_file}" Background="Transparent" Foreground="White">
+                    <MenuItem Name="newMenuItem" Click="newMenuItem_Click" Header="{DynamicResource m_new}" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem.Icon>
                             <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileNew.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Name="openMenuItem" Click="openMenuItem_Click" Header="_Open..." Foreground="{StaticResource menuItemBrush}">
+                    <MenuItem Name="openMenuItem" Click="openMenuItem_Click" Header="{DynamicResource m_open}" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem.Icon>
                             <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileOpen.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
-                    <MenuItem Name="closeMenuItem" Click="closeWindowMenuItem_Click" Header="_Close" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="closeMenuItem" Click="closeWindowMenuItem_Click" Header="{DynamicResource m_close}" Foreground="{StaticResource menuItemBrush}" />
                     <Separator />
-                    <MenuItem Name="saveMenuItem" Click="saveMenuItem_Click" Header="_Save" Foreground="{StaticResource menuItemBrush}">
+                    <MenuItem Name="saveMenuItem" Click="saveMenuItem_Click" Header="{DynamicResource m_save}" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem.Icon>
                             <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileSave.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Name="saveAsMenuItem" Click="saveAsMenuItem_Click" Header="Save _As..." Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="saveAllMenuItem" Click="saveAllMenuItem_Click" Header="Save A_ll" Foreground="{StaticResource menuItemBrush}">
+                    <MenuItem Name="saveAsMenuItem" Click="saveAsMenuItem_Click" Header="{DynamicResource m_save_as}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="saveAllMenuItem" Click="saveAllMenuItem_Click" Header="{DynamicResource m_save_all}" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem.Icon>
                             <Image Height="16px" Source="/RuC.WPF;component/Images/ImageFileSaveAll.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
-                    <MenuItem Name="exitMenuItem" Click="exitMenuItem_Click" Header="E_xit" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="exitMenuItem" Click="exitMenuItem_Click" Header="{DynamicResource m_exit}" Foreground="{StaticResource menuItemBrush}" />
                 </MenuItem>
-                <MenuItem Header="_Edit" Background="Transparent" Foreground="White">
-                    <MenuItem Name="undoMenuItem" Click="undoMenuItem_Click" Header="_Undo" Foreground="{StaticResource menuItemBrush}">
+                <MenuItem Header="{DynamicResource m_edit}" Background="Transparent" Foreground="White">
+                    <MenuItem Name="undoMenuItem" Click="undoMenuItem_Click" Header="{DynamicResource m_undo}" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem.Icon>
                             <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditUndo.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Name="redoMenuItem" Click="redoMenuItem_Click" Header="_Redo" Foreground="{StaticResource menuItemBrush}">
+                    <MenuItem Name="redoMenuItem" Click="redoMenuItem_Click" Header="{DynamicResource m_redo}" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem.Icon>
                             <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditRedo.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
-                    <MenuItem Name="cutMenuItem" Click="cutMenuItem_Click" Header="Cu_t" Foreground="{StaticResource menuItemBrush}">
+                    <MenuItem Name="cutMenuItem" Click="cutMenuItem_Click" Header="{DynamicResource m_cut}" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem.Icon>
                             <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditCut.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Name="copyMenuItem" Click="copyMenuItem_Click" Header="_Copy" Foreground="{StaticResource menuItemBrush}">
+                    <MenuItem Name="copyMenuItem" Click="copyMenuItem_Click" Header="{DynamicResource m_copy}" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem.Icon>
                             <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditCopy.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Name="pasteMenuItem" Click="pasteMenuItem_Click" Header="_Paste" Foreground="{StaticResource menuItemBrush}">
+                    <MenuItem Name="pasteMenuItem" Click="pasteMenuItem_Click" Header="{DynamicResource m_paste}" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem.Icon>
                             <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditPaste.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
-                    <MenuItem Name="selectLine" Click="selectLineMenuItem_Click" Header="Select _Line" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="selectAllMenuItem" Click="selectAllMenuItem_Click" Header="Select _All" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="clearSelection" Click="clearSelectionMenuItem_Click" Header="Clear Selection" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="selectLine" Click="selectLineMenuItem_Click" Header="{DynamicResource m_select_line}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="selectAllMenuItem" Click="selectAllMenuItem_Click" Header="{DynamicResource m_select_all}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="clearSelection" Click="clearSelectionMenuItem_Click" Header="{DynamicResource m_clear_selection}" Foreground="{StaticResource menuItemBrush}" />
                     <Separator />
-                    <MenuItem Header="_Find and Replace" Foreground="{StaticResource menuItemBrush}">
-                        <MenuItem Name="incrementalSearchMenuItem" Click="incrementalSearchMenuItem_Click" Header="_Incremental Search" />
-                        <MenuItem Name="findMenuItem" Click="findMenuItem_Click" Header="_Find" />
-                        <MenuItem Name="replaceMenuItem" Click="replaceMenuItem_Click" Header="_Replace" />
-                        <MenuItem Name="findInFilesMenuItem" Click="findInFilesMenuItem_Click" Header="F_ind in Files" />
-                        <MenuItem Name="replaceInFilesMenuItem" Click="replaceInFilesMenuItem_Click" Header="Replace in File_s" />
+                    <MenuItem Header="{DynamicResource m_find_and_replace}" Foreground="{StaticResource menuItemBrush}">
+                        <MenuItem Name="incrementalSearchMenuItem" Click="incrementalSearchMenuItem_Click" Header="{DynamicResource m_incremental_search}" />
+                        <MenuItem Name="findMenuItem" Click="findMenuItem_Click" Header="{DynamicResource m_find}" />
+                        <MenuItem Name="replaceMenuItem" Click="replaceMenuItem_Click" Header="{DynamicResource m_replace}" />
+                        <MenuItem Name="findInFilesMenuItem" Click="findInFilesMenuItem_Click" Header="{DynamicResource m_find_in_files}" />
+                        <MenuItem Name="replaceInFilesMenuItem" Click="replaceInFilesMenuItem_Click" Header="{DynamicResource m_replace_in_files}" />
                     </MenuItem>
-                    <MenuItem Name="gotoMenuItem" Click="gotoMenuItem_Click" Header="_Go To" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="gotoMenuItem" Click="gotoMenuItem_Click" Header="{DynamicResource m_go_to}" Foreground="{StaticResource menuItemBrush}" />
                     <Separator />
-                    <MenuItem Header="Boo_kmarks" Foreground="{StaticResource menuItemBrush}">
-                        <MenuItem Name="toggleBookmarkMenuItem" Click="toggleBookmarkMenuItem_Click" Header="_Toggle Bookmark" />
-                        <MenuItem Name="previousBookmarkMenuItem" Click="previousBookmarkMenuItem_Click" Header="_Previous Bookmark" />
-                        <MenuItem Name="nextBookmarkMenuItem" Click="nextBookmarkMenuItem_Click" Header="Next _Bookmark" />
-                        <MenuItem Name="clearBookmarksMenuItem" Click="clearBookmarksMenuItem_Click" Header="_Clear Bookmarks" />
+                    <MenuItem Header="{DynamicResource m_bookmarks}" Foreground="{StaticResource menuItemBrush}">
+                        <MenuItem Name="toggleBookmarkMenuItem" Click="toggleBookmarkMenuItem_Click" Header="{DynamicResource m_toggle_bookmark}" />
+                        <MenuItem Name="previousBookmarkMenuItem" Click="previousBookmarkMenuItem_Click" Header="{DynamicResource m_previous_bookmark}" />
+                        <MenuItem Name="nextBookmarkMenuItem" Click="nextBookmarkMenuItem_Click" Header="{DynamicResource m_next_bookmark}" />
+                        <MenuItem Name="clearBookmarksMenuItem" Click="clearBookmarksMenuItem_Click" Header="{DynamicResource m_clear_bookmarks}" />
                     </MenuItem>
                     <Separator />
-                    <MenuItem Header="Ad_vanced" Foreground="{StaticResource menuItemBrush}">
-                        <MenuItem Name="makeUpperCaseMenuItem" Click="makeUpperCaseMenuItem_Click" Header="Make _Upper Case" />
-                        <MenuItem Name="makeLowerCaseMenuItem" Click="makeLowerCaseMenuItem_Click" Header="Make _Lower Case" />
+                    <MenuItem Header="{DynamicResource m_advanced}" Foreground="{StaticResource menuItemBrush}">
+                        <MenuItem Name="makeUpperCaseMenuItem" Click="makeUpperCaseMenuItem_Click" Header="{DynamicResource m_make_upper_case}" />
+                        <MenuItem Name="makeLowerCaseMenuItem" Click="makeLowerCaseMenuItem_Click" Header="{DynamicResource m_make_lower_case}" />
                     </MenuItem>
                 </MenuItem>
-                <MenuItem Header="_View" Background="Transparent" Foreground="White">
-                    <MenuItem Name="toolbarMenuItem" Click="toolbarMenuItem_Click" Header="Tool Bar"
+                <MenuItem Header="{DynamicResource m_view}" Background="Transparent" Foreground="White">
+                    <MenuItem Name="toolbarMenuItem" Click="toolbarMenuItem_Click" Header="{DynamicResource m_tool_bar}"
                               IsCheckable="True" IsChecked="True" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="statusBarMenuItem" Click="statusBarMenuItem_Click" Header="Status Bar"
+                    <MenuItem Name="statusBarMenuItem" Click="statusBarMenuItem_Click" Header="{DynamicResource m_status_bar}"
                               IsCheckable="True" IsChecked="True" Foreground="{StaticResource menuItemBrush}" />
                     <Separator />
-                    <MenuItem Name="whitespaceMenuItem" Click="whitespaceMenuItem_Click" Header="W_hitespace" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="wordWrapMenuItem" Click="wordWrapMenuItem_Click" Header="_Word Wrap" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="endOfLineMenuItem" Click="endOfLineMenuItem_Click" Header="_End of Line" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="whitespaceMenuItem" Click="whitespaceMenuItem_Click" Header="{DynamicResource m_whitespace}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="wordWrapMenuItem" Click="wordWrapMenuItem_Click" Header="{DynamicResource m_word_wrap}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="endOfLineMenuItem" Click="endOfLineMenuItem_Click" Header="{DynamicResource m_end_of_line}" Foreground="{StaticResource menuItemBrush}" />
                     <Separator />
-                    <MenuItem Name="zoomInMenuItem" Click="zoomInMenuItem_Click" Header="Zoom _In" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="zoomOutMenuItem" Click="zoomOutMenuItem_Click" Header="Zoom _Out" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="resetZoomMenuItem" Click="resetZoomMenuItem_Click" Header="Reset _Zoom" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="zoomInMenuItem" Click="zoomInMenuItem_Click" Header="{DynamicResource m_zoom_in}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="zoomOutMenuItem" Click="zoomOutMenuItem_Click" Header="{DynamicResource m_zoom_out}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="resetZoomMenuItem" Click="resetZoomMenuItem_Click" Header="{DynamicResource m_reset_zoom}" Foreground="{StaticResource menuItemBrush}" />
                     <Separator />
-                    <MenuItem Name="lineNumbersMenuItem" Click="lineNumbersMenuItem_Click" Header="Line Nu_mbers" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="lineNumbersMenuItem" Click="lineNumbersMenuItem_Click" Header="{DynamicResource m_line_numbers}" Foreground="{StaticResource menuItemBrush}" />
                     <Separator />
-                    <MenuItem Name="foldLevelMenuItem" Click="foldLevelMenuItem_Click" Header="_Fold Level" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="unfoldLevelMenuItem" Click="unfoldLevelMenuItem_Click" Header="_Unfold Level" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="foldAllMenuItem" Click="foldAllMenuItem_Click" Header="Fold _All" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="unfoldAllMenuItem" Click="unfoldAllMenuItem_Click" Header="Unfold A_ll" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="foldLevelMenuItem" Click="foldLevelMenuItem_Click" Header="{DynamicResource m_fold_level}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="unfoldLevelMenuItem" Click="unfoldLevelMenuItem_Click" Header="{DynamicResource m_unfold_level}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="foldAllMenuItem" Click="foldAllMenuItem_Click" Header="{DynamicResource m_fold_all}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="unfoldAllMenuItem" Click="unfoldAllMenuItem_Click" Header="{DynamicResource m_unfold_all}" Foreground="{StaticResource menuItemBrush}" />
                 </MenuItem>
-                <MenuItem Header="_Window" Background="Transparent" Foreground="White">
-                    <MenuItem Name="bookmarkWindowMenuItem" Click="bookmarkWindowMenuItem_Click" Header="_Bookmark Window"
+                <MenuItem Header="{DynamicResource m_window}" Background="Transparent" Foreground="White">
+                    <MenuItem Name="bookmarkWindowMenuItem" Click="bookmarkWindowMenuItem_Click" Header="{DynamicResource m_bookmark_window}"
                               Visibility="Collapsed" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="findResultsMenuItem" Click="findResultsMenuItem_Click" Header="_Find Results"
+                    <MenuItem Name="findResultsMenuItem" Click="findResultsMenuItem_Click" Header="{DynamicResource m_find_results}"
                               Visibility="Collapsed" Foreground="{StaticResource menuItemBrush}" />
                     <Separator Visibility="Collapsed" />
-                    <MenuItem Name="closeWindowMenuItem" Click="closeWindowMenuItem_Click" Header="_Close" Foreground="{StaticResource menuItemBrush}" />
-                    <MenuItem Name="closeAllMenuItem" Click="closeAllMenuItem_Click" Header="C_lose All"
+                    <MenuItem Name="closeWindowMenuItem" Click="closeWindowMenuItem_Click" Header="{DynamicResource m_close}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="closeAllMenuItem" Click="closeAllMenuItem_Click" Header="{DynamicResource m_close_all}"
                               Visibility="Collapsed" Foreground="{StaticResource menuItemBrush}" />
                 </MenuItem>
-                <MenuItem Header="_Help" Background="Transparent" Foreground="White">
-                    <MenuItem Name="aboutMenuItem" Click="aboutMenuItem_Click" Header="_About" Foreground="{StaticResource menuItemBrush}" />
+                <MenuItem Header="{DynamicResource m_help}" Background="Transparent" Foreground="White">
+                    <MenuItem Name="aboutMenuItem" Click="aboutMenuItem_Click" Header="{DynamicResource m_about}" Foreground="{StaticResource menuItemBrush}" />
                 </MenuItem>
             </Menu>
         </Controls:WindowCommands>

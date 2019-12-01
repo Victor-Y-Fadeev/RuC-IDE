@@ -69,7 +69,14 @@
     <v:String x:Key="m_CtrlZ">Отменить (Ctrl+Z)</v:String>
     <v:String x:Key="m_CtrlY">Вернуть (Ctrl+Y)</v:String>
 
-    <!-- Main window -->
+    <!-- About window -->
     <v:String x:Key="m_AboutWindow">О программе Russian C IDE</v:String>
+
+    <!-- Document Form -->
+    <v:String x:Key="m_DocumentForm">Сохранить изменения, внесенные в {0}?{1}{2}Если не сохранить изменения, они будут утеряны.</v:String>
+    <v:String x:Key="m_DocumentYes">_Сохранить</v:String>
+    <v:String x:Key="m_DocumentNo">_Не сохранять</v:String>
+    <v:String x:Key="m_DocumentCancel">Отмена</v:String>
+
 
 </ResourceDictionary>

@@ -83,7 +83,7 @@ namespace RuC.WPF
 				}
 
 				// Prompt if not saved
-				string message = String.Format(CultureInfo.CurrentCulture, "The _text in the {0} file has changed.{1}{2}Do you want to save the changes?", Title.TrimEnd(' ', '*'), Environment.NewLine, Environment.NewLine);
+				string message = String.Format(CultureInfo.CurrentCulture, Application.Current.Resources["m_DocumentForm"].ToString(), Title.TrimEnd(' ', '*'), Environment.NewLine, Environment.NewLine);
 
 				Task<MessageDialogResult> dc = (Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
 					Program.Title,
@@ -92,9 +92,9 @@ namespace RuC.WPF
 					new MetroDialogSettings()
 						{
 							DefaultButtonFocus = MessageDialogResult.FirstAuxiliary,
-							AffirmativeButtonText = "Yes",
-							NegativeButtonText = "No",
-							FirstAuxiliaryButtonText = "Cancel"
+							AffirmativeButtonText = Application.Current.Resources["m_DocumentYes"].ToString(),
+							NegativeButtonText = Application.Current.Resources["m_DocumentNo"].ToString(),
+							FirstAuxiliaryButtonText = Application.Current.Resources["m_DocumentCancel"].ToString()
 						});
 
 				e.Cancel = true;

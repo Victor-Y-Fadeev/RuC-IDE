@@ -205,17 +205,20 @@ namespace RuC.WPF
 
 		private void incrementalSearchMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.FindReplace.ShowIncrementalSearch();
+			if (ActiveDocument != null)
+				ActiveDocument.FindReplace.ShowIncrementalSearch();
 		}
 
 		private void findMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.FindReplace.ShowFind();
+			if (ActiveDocument != null)
+				ActiveDocument.FindReplace.ShowFind();
 		}
 
 		private void replaceMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.FindReplace.ShowReplace();
+			if (ActiveDocument != null)
+				ActiveDocument.FindReplace.ShowReplace();
 		}
 
 		private void findInFilesMenuItem_Click(object sender, RoutedEventArgs e)
@@ -236,6 +239,9 @@ namespace RuC.WPF
 
 		private void gotoMenuItem_Click(object sender, RoutedEventArgs e)
 		{
+			if (ActiveDocument == null)
+				return;
+
 			GoTo MyGoTo = new GoTo(ActiveDocument.Scintilla.Scintilla);
 			MyGoTo.ShowGoToDialog();
 		}
@@ -244,6 +250,9 @@ namespace RuC.WPF
 
 		private void toggleBookmarkMenuItem_Click(object sender, RoutedEventArgs e)
 		{
+			if (ActiveDocument == null)
+				return;
+
 			Line currentLine = ActiveDocument.Scintilla.Lines[ActiveDocument.Scintilla.CurrentLine];
 			const uint mask = (1 << BOOKMARK_MARKER);
 			uint markers = currentLine.MarkerGet();
@@ -259,6 +268,9 @@ namespace RuC.WPF
 
 		private void previousBookmarkMenuItem_Click(object sender, RoutedEventArgs e)
 		{
+			if (ActiveDocument == null)
+				return;
+
 			//	 I've got to redo this whole FindNextMarker/FindPreviousMarker Scheme
 			int lineNumber = ActiveDocument.Scintilla.Lines[ActiveDocument.Scintilla.CurrentLine - 1].MarkerPrevious(1 << BOOKMARK_MARKER);
 			if (lineNumber != -1)
@@ -267,6 +279,9 @@ namespace RuC.WPF
 
 		private void nextBookmarkMenuItem_Click(object sender, RoutedEventArgs e)
 		{
+			if (ActiveDocument == null)
+				return;
+
 			//	 I've got to redo this whole FindNextMarker/FindPreviousMarker Scheme
 			int lineNumber = ActiveDocument.Scintilla.Lines[ActiveDocument.Scintilla.CurrentLine + 1].MarkerNext(1 << BOOKMARK_MARKER);
 			if (lineNumber != -1)
@@ -275,7 +290,8 @@ namespace RuC.WPF
 
 		private void clearBookmarksMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.Scintilla.MarkerDeleteAll(BOOKMARK_MARKER);
+			if (ActiveDocument != null)
+				ActiveDocument.Scintilla.MarkerDeleteAll(BOOKMARK_MARKER);
 		}
 
 		#endregion Bookmarks
@@ -284,12 +300,14 @@ namespace RuC.WPF
 
 		private void makeUpperCaseMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.Scintilla.ExecuteCmd(Command.Uppercase);
+			if (ActiveDocument != null)
+				ActiveDocument.Scintilla.ExecuteCmd(Command.Uppercase);
 		}
 
 		private void makeLowerCaseMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.Scintilla.ExecuteCmd(Command.Lowercase);
+			if (ActiveDocument != null)
+				ActiveDocument.Scintilla.ExecuteCmd(Command.Lowercase);
 		}
 
 		#endregion Advanced

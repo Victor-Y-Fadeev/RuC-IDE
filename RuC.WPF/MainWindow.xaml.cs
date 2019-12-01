@@ -692,7 +692,7 @@ namespace RuC.WPF
 			DocumentForm doc = new DocumentForm();
 			SetScintillaToCurrentOptions(doc);
 			doc.Scintilla.Text = File.ReadAllText(filePath);
-			//doc.Scintilla.UndoRedo.EmptyUndoBuffer();
+			doc.Scintilla.EmptyUndoBuffer();
 			//doc.Scintilla.Modified = false;
 			doc.Title = Path.GetFileName(filePath);
 			doc.FilePath = filePath;

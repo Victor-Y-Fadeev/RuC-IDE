@@ -26,6 +26,7 @@ namespace RuC.WPF
 			this.Closing += new EventHandler<CancelEventArgs>(DocumentForm_Closing);
 			Scintilla.MouseDown += Scintilla_MouseDown;
 			Scintilla.SavePointLeft += Scintilla_SavePointLeft;
+			Scintilla.UpdateUI += Scintilla_SavePointLeft;
 		}
 
 		private void Scintilla_SavePointLeft(object sender, EventArgs e)
@@ -59,13 +60,13 @@ namespace RuC.WPF
 		{
 			if (scintilla.Modified)
 			{
-				if (!Title.EndsWith(" *", StringComparison.InvariantCulture))
-					Title += " *";
+				if (!Title.EndsWith("*", StringComparison.InvariantCulture))
+					Title += "*";
 			}
 			else
 			{
-				if (Title.EndsWith(" *", StringComparison.InvariantCulture))
-					Title = Title.Substring(0, Title.Length - 2);
+				if (Title.EndsWith("*", StringComparison.InvariantCulture))
+					Title = Title.Substring(0, Title.Length - 1);
 			}
 		}
 

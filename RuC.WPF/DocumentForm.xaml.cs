@@ -9,6 +9,9 @@ using System.Windows;
 using System.Diagnostics;
 using ScintillaNET_FindReplaceDialog;
 using Xceed.Wpf.AvalonDock.Layout;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+using System.Threading.Tasks;
 
 namespace RuC.WPF
 {
@@ -70,26 +73,47 @@ namespace RuC.WPF
 			}
 		}
 
-		private void DocumentForm_Closing(object sender, CancelEventArgs e)
+		private async void DocumentForm_Closing(object sender, CancelEventArgs e)
 		{
 			if (Scintilla.Modified)
 			{
+				if (this.Scintilla.Visibility == Visibility.Hidden)
+				{
+					return;
+				}
+
 				// Prompt if not saved
 				string message = String.Format(CultureInfo.CurrentCulture, "The _text in the {0} file has changed.{1}{2}Do you want to save the changes?", Title.TrimEnd(' ', '*'), Environment.NewLine, Environment.NewLine);
 
-				MessageBoxResult dr = MessageBox.Show(message, Program.Title, MessageBoxButton.YesNoCancel, MessageBoxImage.Exclamation);
-				if (dr == MessageBoxResult.Cancel)
+				Task<MessageDialogResult> dc = (Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
+					Program.Title,
+					message,
+					MessageDialogStyle.AffirmativeAndNegativeAndSingleAuxiliary,
+					new MetroDialogSettings()
+						{
+							DefaultButtonFocus = MessageDialogResult.FirstAuxiliary,
+							AffirmativeButtonText = "Yes",
+							NegativeButtonText = "No",
+							FirstAuxiliaryButtonText = "Cancel"
+						});
+
+				e.Cancel = true;
+				this.Scintilla.Visibility = Visibility.Hidden;
+				MessageDialogResult dr = await dc;
+				if (dr == MessageDialogResult.FirstAuxiliary)
 				{
 					// Stop closing
-					e.Cancel = true;
+					this.Scintilla.Visibility = Visibility.Visible;
 					return;
 				}
-				else if (dr == MessageBoxResult.Yes)
+
+				e.Cancel = false;
+				if (dr == MessageDialogResult.Affirmative)
 				{
 					// Try to save before closing
 					e.Cancel = !Save();
-					return;
 				}
+				this.Close();
 			}
 
 			// Close as normal

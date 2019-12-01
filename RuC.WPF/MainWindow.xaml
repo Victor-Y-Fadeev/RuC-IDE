@@ -137,8 +137,6 @@
                         <MenuItem Name="incrementalSearchMenuItem" Click="incrementalSearchMenuItem_Click" Header="{DynamicResource m_IncrementalSearch}" />
                         <MenuItem Name="findMenuItem" Click="findMenuItem_Click" Header="{DynamicResource m_Find}" />
                         <MenuItem Name="replaceMenuItem" Click="replaceMenuItem_Click" Header="{DynamicResource m_Replace}" />
-                        <MenuItem Name="findInFilesMenuItem" Click="findInFilesMenuItem_Click" Header="{DynamicResource m_FindInFiles}" />
-                        <MenuItem Name="replaceInFilesMenuItem" Click="replaceInFilesMenuItem_Click" Header="{DynamicResource m_ReplaceInFiles}" />
                     </MenuItem>
                     <MenuItem Name="gotoMenuItem" Click="gotoMenuItem_Click" Header="{DynamicResource m_GoTo}" Foreground="{StaticResource menuItemBrush}" />
                     <Separator />

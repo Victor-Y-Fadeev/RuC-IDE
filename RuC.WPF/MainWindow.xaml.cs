@@ -9,6 +9,7 @@ using System.Windows.Input;
 using ScintillaNET.WPF;
 using System.Windows.Media;
 using ScintillaNET_FindReplaceDialog;
+using System.Text.RegularExpressions;
 
 namespace RuC.WPF
 {
@@ -502,6 +503,15 @@ namespace RuC.WPF
 				this.Title = Program.Title;
 		}
 
+        private void scintilla_StyleNeeded(object sender, StyleNeededEventArgs e)
+        {
+            ScintillaNET.WPF.ScintillaWPF TextArea = ActiveDocument.Scintilla;
+            var startPos = TextArea.GetEndStyled();
+            var endPos = e.Position;
+
+            lexer.Style(TextArea, startPos, endPos);
+        }
+
 		private void InitBookmarkMargin(ScintillaWPF ScintillaNet)
 		{
 			//TextArea.SetFoldMarginColor(true, IntToColor(BACK_COLOR));
@@ -573,10 +583,13 @@ namespace RuC.WPF
 			ScintillaNet.MarginClick += TextArea_MarginClick;
 		}
 
-		private void InitSyntaxColoring(ScintillaWPF ScintillaNet)
+        private RuCLexer lexer = new RuCLexer("MAIN main ГЛАВНАЯ главная INT int ЦЕЛ цел CHAR char ЛИТЕРА литера FLOAT float ВЕЩ вещ LONG long ДЛИН длин DOUBLE double ДВОЙНОЙ двойной VOID void ПУСТО пусто BREAK break ВЫХОД выходCASE case СЛУЧАЙ случай CONTINUE continue ПРОДОЛЖИТЬ продолжить DEFAULT default УМОЛЧАНИЕ умолчание DO do ЦИКЛ цикл ELSE else ИНАЧЕ иначе ENUM enum ПЕРЕЧЕНЬ перечень тSTRUCT struct СТРУКТУРА структура TYPEDEF typedef ОПРТИПА опртипа FOR for ДЛЯ для GOTO goto ПЕРЕХОД переход IF if ЕСЛИ если RETURN return ВОЗВРАТ возврат SIZEOF sizeof РАЗМЕР размер SWITCH switch ВЫБОР выбор WHILE while ПОКА пока PRINTID printid ПЕЧАТЬИД печатьид PRINT print ПЕЧАТЬ печать PRINTF printf ПЕЧАТЬФ печатьф SCANF scanf ЧИТАТЬФ читатьф GETID getid ЧИТАТЬИД читатьид T_CREATE_DIRECT t_create_direct Н_СОЗДАТЬ_НЕПОСР н_создать_непоср T_EXIT_DIRECT t_exit_direct Н_КОНЕЦ_НЕПОСР н_конец_непоср SETMOTOR setmotor МОТОР мотор GETDIGSENSOR getdigsensor ЦИФРДАТЧИК цифрдатчик GETANSENSOR getansensor АНАЛОГДАТЧИК аналогдатчик SETVOLTAGE setvoltage УСТНАПРЯЖЕНИЕ устнапряжение ABS abs АБС абс SQRT sqrt КВКОР квкор EXP exp ЭКСП эксп SIN sin СИН син COS cos КОС кос LOG log ЛОГ лог LOG10 log10 ЛОГ10 лог10 ASIN asin АСИН асин RAND rand СЛУЧ случ ROUND round ОКРУГЛ округл");
+
+        private void InitSyntaxColoring(ScintillaWPF ScintillaNet)
 		{
-			// Configure the default style
-			ScintillaNet.StyleResetDefault();
+            ScintillaNet.StyleNeeded += (this.scintilla_StyleNeeded);
+            // Configure the default style
+            ScintillaNet.StyleResetDefault();
 			ScintillaNet.Styles[ScintillaNET.Style.Default].Font = "Consolas";
 			ScintillaNet.Styles[ScintillaNET.Style.Default].Size = 10;
 			ScintillaNet.Styles[ScintillaNET.Style.Default].BackColor = IntToColor(0xFFFFFF);
@@ -599,12 +612,14 @@ namespace RuC.WPF
 			ScintillaNet.Styles[ScintillaNET.Style.Cpp.Word2].ForeColor = IntToColor(0x000000);
 			ScintillaNet.Styles[ScintillaNET.Style.Cpp.GlobalClass].ForeColor = IntToColor(0x0000FF);
 
-			ScintillaNet.Lexer = Lexer.Cpp;
+            ScintillaNet.Styles[RuCLexer.StyleDefault].ForeColor = IntToColor(0x000000);
+            ScintillaNet.Styles[RuCLexer.StyleKeyword].ForeColor = IntToColor(0x0000FF);
+            ScintillaNet.Styles[RuCLexer.StyleIdentifier].ForeColor = IntToColor(0x000000);
+            ScintillaNet.Styles[RuCLexer.StyleNumber].ForeColor = IntToColor(0xFF00FC);
+            ScintillaNet.Styles[RuCLexer.StyleString].ForeColor = IntToColor(0xA31515);
 
-			ScintillaNet.SetKeywords(0, "class extends implements import interface new case do while else if for in switch throw get set function var try catch finally while with default break continue delete return each const namespace package include use is as instanceof typeof author copy default deprecated eventType example exampleText exception haxe inheritDoc internal link mtasc mxmlc param private return see serial serialData serialField since throws usage version langversion playerversion productversion dynamic private public partial static intrinsic internal native override protected AS3 final super this arguments null Infinity NaN undefined true false abstract as base bool break by byte case catch char checked class const continue decimal default delegate do double descending explicit event extern else enum false finally fixed float for foreach from goto group if implicit in int interface internal into is lock long new null namespace object operator out override orderby params private protected public readonly ref return switch struct sbyte sealed short sizeof stackalloc static string select this throw true try typeof uint ulong unchecked unsafe ushort using var virtual volatile void while where yield");
-			ScintillaNet.SetKeywords(1, "void Null ArgumentError arguments Array Boolean Class Date DefinitionError Error EvalError Function int Math Namespace Number Object RangeError ReferenceError RegExp SecurityError String SyntaxError TypeError uint XML XMLList Boolean Byte Char DateTime Decimal Double Int16 Int32 Int64 IntPtr SByte Single UInt16 UInt32 UInt64 UIntPtr Void Path File System Windows Forms ScintillaNET");
-
-		}
+            ScintillaNet.Lexer = Lexer.Container;
+        }
 
 		/// <summary>
 		/// Converts a Win32 colour to a Drawing.Color
@@ -815,6 +830,126 @@ namespace RuC.WPF
 			//OpenFile("../../RuC.WPF/DocumentForm.xaml.cs");
 		}
 
-		#endregion Methods
-	}
+        #endregion Methods
+
+        #region Classes
+        public class RuCLexer
+        {
+            public const int StyleDefault = 0;
+            public const int StyleKeyword = 1;
+            public const int StyleIdentifier = 2;
+            public const int StyleNumber = 3;
+            public const int StyleString = 4;
+
+            private const int STATE_UNKNOWN = 0;
+            private const int STATE_IDENTIFIER = 1;
+            private const int STATE_NUMBER = 2;
+            private const int STATE_STRING = 3;
+
+            private HashSet<string> keywords;
+
+            public void Style(ScintillaWPF scintilla, int startPos, int endPos)
+            {
+                // Back up to the line start
+                var line = scintilla.LineFromPosition(startPos);
+                startPos = scintilla.Lines[line].Position;
+
+                var length = 0;
+                var state = STATE_UNKNOWN;
+
+                // Start styling
+                scintilla.StartStyling(startPos);
+                while (startPos < endPos)
+                {
+                    var c = (char)scintilla.GetCharAt(startPos);
+
+                REPROCESS:
+                    switch (state)
+                    {
+                        case STATE_UNKNOWN:
+                            if (c == '"')
+                            {
+                                // Start of "string"
+                                scintilla.SetStyling(1, StyleString);
+                                state = STATE_STRING;
+                            }
+                            else if (Char.IsDigit(c))
+                            {
+                                state = STATE_NUMBER;
+                                goto REPROCESS;
+                            }
+                            else if (Char.IsLetter(c))
+                            {
+                                state = STATE_IDENTIFIER;
+                                goto REPROCESS;
+                            }
+                            else
+                            {
+                                // Everything else
+                                scintilla.SetStyling(1, StyleDefault);
+                            }
+                            break;
+
+                        case STATE_STRING:
+                            if (c == '"')
+                            {
+                                length++;
+                                scintilla.SetStyling(length, StyleString);
+                                length = 0;
+                                state = STATE_UNKNOWN;
+                            }
+                            else
+                            {
+                                length++;
+                            }
+                            break;
+
+                        case STATE_NUMBER:
+                            if (Char.IsDigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F') || c == 'x')
+                            {
+                                length++;
+                            }
+                            else
+                            {
+                                scintilla.SetStyling(length, StyleNumber);
+                                length = 0;
+                                state = STATE_UNKNOWN;
+                                goto REPROCESS;
+                            }
+                            break;
+
+                        case STATE_IDENTIFIER:
+                            if (Char.IsLetterOrDigit(c))
+                            {
+                                length++;
+                            }
+                            else
+                            {
+                                var style = StyleIdentifier;
+                                var identifier = scintilla.GetTextRange(startPos - length, length);
+                                if (keywords.Contains(identifier))
+                                    style = StyleKeyword;
+
+                                scintilla.SetStyling(length, style);
+                                length = 0;
+                                state = STATE_UNKNOWN;
+                                goto REPROCESS;
+                            }
+                            break;
+                    }
+
+                    startPos++;
+                }
+            }
+
+            public RuCLexer(string keywords)
+            {
+                // Put keywords in a HashSet
+                var list = Regex.Split(keywords ?? string.Empty, @"\s+").Where(l => !string.IsNullOrEmpty(l));
+                this.keywords = new HashSet<string>(list);
+            }
+        }
+
+        #endregion Classes
+    }
 }

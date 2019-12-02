@@ -22,6 +22,9 @@
         <CommandBinding Command="{x:Static my:MainWindow.FindCommand}" Executed="findMenuItem_Click" />
         <CommandBinding Command="{x:Static my:MainWindow.ReplaceCommand}" Executed="replaceMenuItem_Click" />
         <CommandBinding Command="{x:Static my:MainWindow.GotoCommand}" Executed="gotoMenuItem_Click" />
+        <CommandBinding Command="{x:Static my:MainWindow.RunCommand}" Executed="runMenuItem_Click" />
+        <CommandBinding Command="{x:Static my:MainWindow.BreakCommand}" Executed="breakMenuItem_Click" />
+        <CommandBinding Command="{x:Static my:MainWindow.OutputCommand}" Executed="outputMenuItem_Click" />
     </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Key="N"
@@ -68,6 +71,15 @@
                     Modifiers="Ctrl" />
         <KeyBinding Key="G"
                     Command="{x:Static my:MainWindow.GotoCommand}"
+                    Modifiers="Ctrl" />
+        <KeyBinding Key="F5"
+                    Command="{x:Static my:MainWindow.RunCommand}"
+                    Modifiers="" />
+        <KeyBinding Key="F5"
+                    Command="{x:Static my:MainWindow.BreakCommand}"
+                    Modifiers="Shift" />
+        <KeyBinding Key="B"
+                    Command="{x:Static my:MainWindow.OutputCommand}"
                     Modifiers="Ctrl" />
     </Window.InputBindings>
     <Controls:MetroWindow.LeftWindowCommands>
@@ -178,8 +190,28 @@
                     <MenuItem Name="foldAllMenuItem" Click="foldAllMenuItem_Click" Header="{DynamicResource m_FoldAll}" Foreground="{StaticResource menuItemBrush}" />
                     <MenuItem Name="unfoldAllMenuItem" Click="unfoldAllMenuItem_Click" Header="{DynamicResource m_UnfoldAll}" Foreground="{StaticResource menuItemBrush}" />
                 </MenuItem>
+                <MenuItem Header="{DynamicResource m_Debug}" Background="Transparent" Foreground="White">
+                    <MenuItem Name="runMenuItem" Click="runMenuItem_Click" Header="{DynamicResource m_Run}" Foreground="{StaticResource menuItemBrush}">
+                        <MenuItem.Icon>
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugRun.png" Stretch="Uniform" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="breakMenuItem" Click="breakMenuItem_Click" Header="{DynamicResource m_Break}" Foreground="{StaticResource menuItemBrush}">
+                        <MenuItem.Icon>
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugBreak.png" Stretch="Uniform" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem Name="buildMenuItem" Click="buildMenuItem_Click" Header="{DynamicResource m_Build}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="outputMenuItem" Click="outputMenuItem_Click" Header="{DynamicResource m_Upload}" Foreground="{StaticResource menuItemBrush}">
+                        <MenuItem.Icon>
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugOutput.png" Stretch="Uniform" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="firmwareMenuItem" Click="firmwareMenuItem_Click" Header="{DynamicResource m_UpdateFirmware}" Foreground="{StaticResource menuItemBrush}" />
+                </MenuItem>
                 <MenuItem Header="{DynamicResource m_Window}" Background="Transparent" Foreground="White">
-                    <MenuItem Name="language" Header="{DynamicResource m_Language}" Foreground="{StaticResource menuItemBrush}" />
+                    <MenuItem Name="languageMenuItem" Header="{DynamicResource m_Language}" Foreground="{StaticResource menuItemBrush}" />
                     <Separator />
                     <MenuItem Name="bookmarkWindowMenuItem" Click="bookmarkWindowMenuItem_Click" Header="{DynamicResource m_BookmarkWindow}"
                               Visibility="Collapsed" Foreground="{StaticResource menuItemBrush}" />
@@ -223,6 +255,17 @@
                             </StackPanel>
                         </Button>
                         <Separator />
+                        <Button Click="undoMenuItem_Click" ToolTip="{DynamicResource m_CtrlZ}">
+                            <StackPanel>
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditUndo.png" Stretch="Uniform" />
+                            </StackPanel>
+                        </Button>
+                        <Button Click="redoMenuItem_Click" ToolTip="{DynamicResource m_CtrlY}">
+                            <StackPanel>
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditRedo.png" Stretch="Uniform" />
+                            </StackPanel>
+                        </Button>
+                        <Separator />
                         <Button Click="cutMenuItem_Click" ToolTip="{DynamicResource m_CtrlX}">
                             <StackPanel>
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditCut.png" Stretch="Uniform" />
@@ -239,14 +282,19 @@
                             </StackPanel>
                         </Button>
                         <Separator />
-                        <Button Click="undoMenuItem_Click" ToolTip="{DynamicResource m_CtrlZ}">
+                        <Button Click="runMenuItem_Click" ToolTip="{DynamicResource m_F5}">
                             <StackPanel>
-                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditUndo.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugRun.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Click="redoMenuItem_Click" ToolTip="{DynamicResource m_CtrlY}">
+                        <Button Click="breakMenuItem_Click" ToolTip="{DynamicResource m_ShiftF5}">
                             <StackPanel>
-                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageEditRedo.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugBreak.png" Stretch="Uniform" />
+                            </StackPanel>
+                        </Button>
+                        <Button Click="outputMenuItem_Click" ToolTip="{DynamicResource m_CtrlB}">
+                            <StackPanel>
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugOutput.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                     </ToolBar>

@@ -73,6 +73,9 @@ namespace RuC.WPF
 		public static RoutedCommand FindCommand = new RoutedCommand();
 		public static RoutedCommand ReplaceCommand = new RoutedCommand();
 		public static RoutedCommand GotoCommand = new RoutedCommand();
+		public static RoutedCommand RunCommand = new RoutedCommand();
+		public static RoutedCommand BreakCommand = new RoutedCommand();
+		public static RoutedCommand OutputCommand = new RoutedCommand();
 
 		private const string ProductName = "Russian C IDE";
 
@@ -90,7 +93,7 @@ namespace RuC.WPF
 
 			CultureInfo currLang = App.Language;
 
-			language.Items.Clear();
+			languageMenuItem.Items.Clear();
 			foreach (var lang in App.Languages)
 			{
 				MenuItem menuLang = new MenuItem();
@@ -98,7 +101,7 @@ namespace RuC.WPF
 				menuLang.Tag = lang;
 				menuLang.IsChecked = lang.Equals(currLang);
 				menuLang.Click += ChangeLanguageClick;
-				language.Items.Add(menuLang);
+				languageMenuItem.Items.Add(menuLang);
 			}
 
 			// TODO Why this has to be here, I have no idea.
@@ -466,6 +469,40 @@ namespace RuC.WPF
 		#endregion Folding
 
 		#endregion View
+
+		#region Debug
+
+		private void runMenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			// TODO - Implement bookmark window feature
+			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+		}
+
+		private void breakMenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			// TODO - Implement find results window feature
+			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+		}
+
+		private void firmwareMenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			// TODO - Implement find results window feature
+			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+		}
+
+		private void buildMenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			// TODO - Implement find results window feature
+			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+		}
+
+		private void outputMenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			// TODO - Implement close all windows feature
+			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+		}
+
+		#endregion Debug
 
 		#region Window
 
@@ -854,7 +891,7 @@ namespace RuC.WPF
 		{
 			CultureInfo currLang = App.Language;
 
-			foreach (MenuItem i in language.Items)
+			foreach (MenuItem i in languageMenuItem.Items)
 			{
 				CultureInfo ci = i.Tag as CultureInfo;
 				i.IsChecked = ci != null && ci.Equals(currLang);

@@ -10,6 +10,8 @@ using ScintillaNET.WPF;
 using System.Windows.Media;
 using ScintillaNET_FindReplaceDialog;
 using System.Windows.Controls;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace RuC.WPF
 {
@@ -475,31 +477,46 @@ namespace RuC.WPF
 		private void runMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			// TODO - Implement bookmark window feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			(Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
+				Program.Title,
+				"Future!",
+				MessageDialogStyle.Affirmative);
 		}
 
 		private void breakMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			// TODO - Implement find results window feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			(Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
+				Program.Title,
+				"Future!",
+				MessageDialogStyle.Affirmative);
 		}
 
 		private void firmwareMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			// TODO - Implement find results window feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			(Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
+				Program.Title,
+				"Future!",
+				MessageDialogStyle.Affirmative);
 		}
 
 		private void buildMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			// TODO - Implement find results window feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			(Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
+				Program.Title,
+				"Future!",
+				MessageDialogStyle.Affirmative);
 		}
 
 		private void outputMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			// TODO - Implement close all windows feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			(Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
+				Program.Title,
+				"Future!",
+				MessageDialogStyle.Affirmative);
 		}
 
 		#endregion Debug

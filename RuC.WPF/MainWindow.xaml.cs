@@ -9,6 +9,7 @@ using System.Windows.Input;
 using ScintillaNET.WPF;
 using System.Windows.Media;
 using ScintillaNET_FindReplaceDialog;
+using System.Windows.Controls;
 
 namespace RuC.WPF
 {
@@ -84,6 +85,22 @@ namespace RuC.WPF
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			App.LanguageChanged += LanguageChanged;
+
+			CultureInfo currLang = App.Language;
+
+			language.Items.Clear();
+			foreach (var lang in App.Languages)
+			{
+				MenuItem menuLang = new MenuItem();
+				menuLang.Header = lang.NativeName.First().ToString().ToUpper() + lang.NativeName.Substring(1);
+				menuLang.Tag = lang;
+				menuLang.IsChecked = lang.Equals(currLang);
+				menuLang.Click += ChangeLanguageClick;
+				language.Items.Add(menuLang);
+			}
+
 			// TODO Why this has to be here, I have no idea.
 			// All I know is that it doesn't work properly
 			// if put in the xaml file.
@@ -205,17 +222,20 @@ namespace RuC.WPF
 
 		private void incrementalSearchMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.FindReplace.ShowIncrementalSearch();
+			if (ActiveDocument != null)
+				ActiveDocument.FindReplace.ShowIncrementalSearch();
 		}
 
 		private void findMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.FindReplace.ShowFind();
+			if (ActiveDocument != null)
+				ActiveDocument.FindReplace.ShowFind();
 		}
 
 		private void replaceMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.FindReplace.ShowReplace();
+			if (ActiveDocument != null)
+				ActiveDocument.FindReplace.ShowReplace();
 		}
 
 		private void findInFilesMenuItem_Click(object sender, RoutedEventArgs e)
@@ -236,6 +256,9 @@ namespace RuC.WPF
 
 		private void gotoMenuItem_Click(object sender, RoutedEventArgs e)
 		{
+			if (ActiveDocument == null)
+				return;
+
 			GoTo MyGoTo = new GoTo(ActiveDocument.Scintilla.Scintilla);
 			MyGoTo.ShowGoToDialog();
 		}
@@ -244,6 +267,9 @@ namespace RuC.WPF
 
 		private void toggleBookmarkMenuItem_Click(object sender, RoutedEventArgs e)
 		{
+			if (ActiveDocument == null)
+				return;
+
 			Line currentLine = ActiveDocument.Scintilla.Lines[ActiveDocument.Scintilla.CurrentLine];
 			const uint mask = (1 << BOOKMARK_MARKER);
 			uint markers = currentLine.MarkerGet();
@@ -259,6 +285,9 @@ namespace RuC.WPF
 
 		private void previousBookmarkMenuItem_Click(object sender, RoutedEventArgs e)
 		{
+			if (ActiveDocument == null)
+				return;
+
 			//	 I've got to redo this whole FindNextMarker/FindPreviousMarker Scheme
 			int lineNumber = ActiveDocument.Scintilla.Lines[ActiveDocument.Scintilla.CurrentLine - 1].MarkerPrevious(1 << BOOKMARK_MARKER);
 			if (lineNumber != -1)
@@ -267,6 +296,9 @@ namespace RuC.WPF
 
 		private void nextBookmarkMenuItem_Click(object sender, RoutedEventArgs e)
 		{
+			if (ActiveDocument == null)
+				return;
+
 			//	 I've got to redo this whole FindNextMarker/FindPreviousMarker Scheme
 			int lineNumber = ActiveDocument.Scintilla.Lines[ActiveDocument.Scintilla.CurrentLine + 1].MarkerNext(1 << BOOKMARK_MARKER);
 			if (lineNumber != -1)
@@ -275,7 +307,8 @@ namespace RuC.WPF
 
 		private void clearBookmarksMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.Scintilla.MarkerDeleteAll(BOOKMARK_MARKER);
+			if (ActiveDocument != null)
+				ActiveDocument.Scintilla.MarkerDeleteAll(BOOKMARK_MARKER);
 		}
 
 		#endregion Bookmarks
@@ -284,12 +317,14 @@ namespace RuC.WPF
 
 		private void makeUpperCaseMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.Scintilla.ExecuteCmd(Command.Uppercase);
+			if (ActiveDocument != null)
+				ActiveDocument.Scintilla.ExecuteCmd(Command.Uppercase);
 		}
 
 		private void makeLowerCaseMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			ActiveDocument.Scintilla.ExecuteCmd(Command.Lowercase);
+			if (ActiveDocument != null)
+				ActiveDocument.Scintilla.ExecuteCmd(Command.Lowercase);
 		}
 
 		#endregion Advanced
@@ -674,7 +709,7 @@ namespace RuC.WPF
 			DocumentForm doc = new DocumentForm();
 			SetScintillaToCurrentOptions(doc);
 			doc.Scintilla.Text = File.ReadAllText(filePath);
-			//doc.Scintilla.UndoRedo.EmptyUndoBuffer();
+			doc.Scintilla.EmptyUndoBuffer();
 			//doc.Scintilla.Modified = false;
 			doc.Title = Path.GetFileName(filePath);
 			doc.FilePath = filePath;
@@ -813,6 +848,30 @@ namespace RuC.WPF
 			// DEFAULT FILE
 			//OpenFile("../../RuC.WPF/MainWindow.xaml.cs");
 			//OpenFile("../../RuC.WPF/DocumentForm.xaml.cs");
+		}
+
+		private void LanguageChanged(Object sender, EventArgs e)
+		{
+			CultureInfo currLang = App.Language;
+
+			foreach (MenuItem i in language.Items)
+			{
+				CultureInfo ci = i.Tag as CultureInfo;
+				i.IsChecked = ci != null && ci.Equals(currLang);
+			}
+		}
+
+		private void ChangeLanguageClick(Object sender, EventArgs e)
+		{
+			MenuItem mi = sender as MenuItem;
+			if (mi != null)
+			{
+				CultureInfo lang = mi.Tag as CultureInfo;
+				if (lang != null)
+				{
+					App.Language = lang;
+				}
+			}
 		}
 
 		#endregion Methods

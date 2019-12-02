@@ -9,6 +9,9 @@ using System.Windows;
 using System.Diagnostics;
 using ScintillaNET_FindReplaceDialog;
 using Xceed.Wpf.AvalonDock.Layout;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+using System.Threading.Tasks;
 
 namespace RuC.WPF
 {
@@ -26,6 +29,7 @@ namespace RuC.WPF
 			this.Closing += new EventHandler<CancelEventArgs>(DocumentForm_Closing);
 			Scintilla.MouseDown += Scintilla_MouseDown;
 			Scintilla.SavePointLeft += Scintilla_SavePointLeft;
+			Scintilla.UpdateUI += Scintilla_SavePointLeft;
 		}
 
 		private void Scintilla_SavePointLeft(object sender, EventArgs e)
@@ -59,36 +63,57 @@ namespace RuC.WPF
 		{
 			if (scintilla.Modified)
 			{
-				if (!Title.EndsWith(" *", StringComparison.InvariantCulture))
-					Title += " *";
+				if (!Title.EndsWith("*", StringComparison.InvariantCulture))
+					Title += "*";
 			}
 			else
 			{
-				if (Title.EndsWith(" *", StringComparison.InvariantCulture))
-					Title = Title.Substring(0, Title.Length - 2);
+				if (Title.EndsWith("*", StringComparison.InvariantCulture))
+					Title = Title.Substring(0, Title.Length - 1);
 			}
 		}
 
-		private void DocumentForm_Closing(object sender, CancelEventArgs e)
+		private async void DocumentForm_Closing(object sender, CancelEventArgs e)
 		{
 			if (Scintilla.Modified)
 			{
-				// Prompt if not saved
-				string message = String.Format(CultureInfo.CurrentCulture, "The _text in the {0} file has changed.{1}{2}Do you want to save the changes?", Title.TrimEnd(' ', '*'), Environment.NewLine, Environment.NewLine);
-
-				MessageBoxResult dr = MessageBox.Show(message, Program.Title, MessageBoxButton.YesNoCancel, MessageBoxImage.Exclamation);
-				if (dr == MessageBoxResult.Cancel)
+				if (this.Scintilla.Visibility == Visibility.Collapsed)
 				{
-					// Stop closing
-					e.Cancel = true;
 					return;
 				}
-				else if (dr == MessageBoxResult.Yes)
+
+				// Prompt if not saved
+				string message = String.Format(CultureInfo.CurrentCulture, Application.Current.Resources["m_DocumentForm"].ToString(), Title.TrimEnd(' ', '*'), Environment.NewLine, Environment.NewLine);
+
+				Task<MessageDialogResult> dc = (Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
+					Program.Title,
+					message,
+					MessageDialogStyle.AffirmativeAndNegativeAndSingleAuxiliary,
+					new MetroDialogSettings()
+						{
+							DefaultButtonFocus = MessageDialogResult.FirstAuxiliary,
+							AffirmativeButtonText = Application.Current.Resources["m_DocumentYes"].ToString(),
+							NegativeButtonText = Application.Current.Resources["m_DocumentNo"].ToString(),
+							FirstAuxiliaryButtonText = Application.Current.Resources["m_DocumentCancel"].ToString()
+						});
+
+				e.Cancel = true;
+				this.Scintilla.Visibility = Visibility.Collapsed;
+				MessageDialogResult dr = await dc;
+				if (dr == MessageDialogResult.FirstAuxiliary)
+				{
+					// Stop closing
+					this.Scintilla.Visibility = Visibility.Visible;
+					return;
+				}
+
+				e.Cancel = false;
+				if (dr == MessageDialogResult.Affirmative)
 				{
 					// Try to save before closing
 					e.Cancel = !Save();
-					return;
 				}
+				this.Close();
 			}
 
 			// Close as normal

@@ -52,6 +52,7 @@
     <v:String x:Key="m_FoldAll">Fold _All</v:String>
     <v:String x:Key="m_UnfoldAll">Unfold A_ll</v:String>
     <v:String x:Key="m_Window">_Window</v:String>
+    <v:String x:Key="m_Language">Language</v:String>
     <v:String x:Key="m_BookmarkWindow">_Bookmark Window</v:String>
     <v:String x:Key="m_FindResults">_Find Results</v:String>
     <!-- <v:String x:Key="m_Close">_Close</v:String> -->
@@ -69,7 +70,13 @@
     <v:String x:Key="m_CtrlZ">Undo (Ctrl+Z)</v:String>
     <v:String x:Key="m_CtrlY">Redo (Ctrl+Y)</v:String>
 
-    <!-- Main window -->
+    <!-- About window -->
     <v:String x:Key="m_AboutWindow">About Russian C IDE</v:String>
-    
+
+    <!-- Document Form -->
+    <v:String x:Key="m_DocumentForm">Do you want to save the changes you made to {0}?{1}{2}Your changes will be lost if you don't save them.</v:String>
+    <v:String x:Key="m_DocumentYes">_Save</v:String>
+    <v:String x:Key="m_DocumentNo">Do_n't Save</v:String>
+    <v:String x:Key="m_DocumentCancel">Cancel</v:String>
+
 </ResourceDictionary>

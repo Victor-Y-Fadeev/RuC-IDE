@@ -210,9 +210,7 @@
                     </MenuItem>
                     <MenuItem Name="firmwareMenuItem" Click="firmwareMenuItem_Click" Header="{DynamicResource m_UpdateFirmware}" Foreground="{StaticResource menuItemBrush}" />
                 </MenuItem>
-                <MenuItem Header="{DynamicResource m_Window}" Background="Transparent" Foreground="White">
-                    <MenuItem Name="languageMenuItem" Header="{DynamicResource m_Language}" Foreground="{StaticResource menuItemBrush}" />
-                    <Separator />
+                <MenuItem Header="{DynamicResource m_Window}" Background="Transparent" Foreground="White" Visibility="Collapsed">
                     <MenuItem Name="bookmarkWindowMenuItem" Click="bookmarkWindowMenuItem_Click" Header="{DynamicResource m_BookmarkWindow}"
                               Visibility="Collapsed" Foreground="{StaticResource menuItemBrush}" />
                     <MenuItem Name="findResultsMenuItem" Click="findResultsMenuItem_Click" Header="{DynamicResource m_FindResults}"
@@ -223,6 +221,8 @@
                               Visibility="Collapsed" Foreground="{StaticResource menuItemBrush}" />
                 </MenuItem>
                 <MenuItem Header="{DynamicResource m_Help}" Background="Transparent" Foreground="White">
+                    <MenuItem Name="languageMenuItem" Header="{DynamicResource m_Language}" Foreground="{StaticResource menuItemBrush}" />
+                    <Separator />
                     <MenuItem Name="aboutMenuItem" Click="aboutMenuItem_Click" Header="{DynamicResource m_About}" Foreground="{StaticResource menuItemBrush}" />
                 </MenuItem>
             </Menu>

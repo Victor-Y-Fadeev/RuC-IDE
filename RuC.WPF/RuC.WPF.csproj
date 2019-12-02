@@ -187,6 +187,9 @@
     <Resource Include="Images\ImageDebugBreak.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\ImageDebugStop.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Images\ImageEditCopy.png" />
   </ItemGroup>
   <ItemGroup>

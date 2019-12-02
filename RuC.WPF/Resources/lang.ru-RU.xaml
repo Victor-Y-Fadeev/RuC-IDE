@@ -54,6 +54,7 @@
     <v:String x:Key="m_Debug">От_ладка</v:String>
     <v:String x:Key="m_Run">_Запустить</v:String>
     <v:String x:Key="m_Break">Пр_ервать</v:String>
+    <v:String x:Key="m_Stop">Оста_новить</v:String>
     <v:String x:Key="m_Build">Со_брать</v:String>
     <v:String x:Key="m_Upload">Загрузить</v:String>
     <v:String x:Key="m_UpdateFirmware">Обновить прошивку</v:String>
@@ -76,7 +77,7 @@
     <v:String x:Key="m_CtrlZ">Отменить (Ctrl+Z)</v:String>
     <v:String x:Key="m_CtrlY">Вернуть (Ctrl+Y)</v:String>
     <v:String x:Key="m_F5">Запустить (F5)</v:String>
-    <v:String x:Key="m_ShiftF5">Прервать (Shift+F5)</v:String>
+    <v:String x:Key="m_ShiftF5">Остановить (Shift+F5)</v:String>
     <v:String x:Key="m_CtrlB">Загрузить (Ctrl+B)</v:String>
 
     <!-- About window -->

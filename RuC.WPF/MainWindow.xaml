@@ -23,7 +23,7 @@
         <CommandBinding Command="{x:Static my:MainWindow.ReplaceCommand}" Executed="replaceMenuItem_Click" />
         <CommandBinding Command="{x:Static my:MainWindow.GotoCommand}" Executed="gotoMenuItem_Click" />
         <CommandBinding Command="{x:Static my:MainWindow.RunCommand}" Executed="runMenuItem_Click" />
-        <CommandBinding Command="{x:Static my:MainWindow.BreakCommand}" Executed="breakMenuItem_Click" />
+        <CommandBinding Command="{x:Static my:MainWindow.StopCommand}" Executed="stopMenuItem_Click" />
         <CommandBinding Command="{x:Static my:MainWindow.OutputCommand}" Executed="outputMenuItem_Click" />
     </Window.CommandBindings>
     <Window.InputBindings>
@@ -76,7 +76,7 @@
                     Command="{x:Static my:MainWindow.RunCommand}"
                     Modifiers="" />
         <KeyBinding Key="F5"
-                    Command="{x:Static my:MainWindow.BreakCommand}"
+                    Command="{x:Static my:MainWindow.StopCommand}"
                     Modifiers="Shift" />
         <KeyBinding Key="B"
                     Command="{x:Static my:MainWindow.OutputCommand}"
@@ -196,9 +196,9 @@
                             <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugRun.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Name="breakMenuItem" Click="breakMenuItem_Click" Header="{DynamicResource m_Break}" Foreground="{StaticResource menuItemBrush}">
+                    <MenuItem Name="stopMenuItem" Click="stopMenuItem_Click" Header="{DynamicResource m_Stop}" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem.Icon>
-                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugBreak.png" Stretch="Uniform" />
+                            <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugStop.png" Stretch="Uniform" />
                         </MenuItem.Icon>
                     </MenuItem>
                     <Separator />
@@ -287,9 +287,9 @@
                                 <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugRun.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
-                        <Button Click="breakMenuItem_Click" ToolTip="{DynamicResource m_ShiftF5}">
+                        <Button Click="stopMenuItem_Click" ToolTip="{DynamicResource m_ShiftF5}">
                             <StackPanel>
-                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugBreak.png" Stretch="Uniform" />
+                                <Image Height="16px" Source="/RuC.WPF;component/Images/ImageDebugStop.png" Stretch="Uniform" />
                             </StackPanel>
                         </Button>
                         <Button Click="outputMenuItem_Click" ToolTip="{DynamicResource m_CtrlB}">

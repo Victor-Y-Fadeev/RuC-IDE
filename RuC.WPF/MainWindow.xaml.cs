@@ -76,7 +76,7 @@ namespace RuC.WPF
 		public static RoutedCommand ReplaceCommand = new RoutedCommand();
 		public static RoutedCommand GotoCommand = new RoutedCommand();
 		public static RoutedCommand RunCommand = new RoutedCommand();
-		public static RoutedCommand BreakCommand = new RoutedCommand();
+		public static RoutedCommand StopCommand = new RoutedCommand();
 		public static RoutedCommand OutputCommand = new RoutedCommand();
 
 		private const string ProductName = "Russian C IDE";
@@ -483,7 +483,7 @@ namespace RuC.WPF
 				MessageDialogStyle.Affirmative);
 		}
 
-		private void breakMenuItem_Click(object sender, RoutedEventArgs e)
+		private void stopMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			// TODO - Implement find results window feature
 			(Application.Current.MainWindow as MetroWindow).ShowMessageAsync(

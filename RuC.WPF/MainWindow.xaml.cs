@@ -12,6 +12,7 @@ using ScintillaNET_FindReplaceDialog;
 using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
+using System.Threading.Tasks;
 
 namespace RuC.WPF
 {
@@ -476,47 +477,27 @@ namespace RuC.WPF
 
 		private void runMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			// TODO - Implement bookmark window feature
-			(Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
-				Program.Title,
-				"Future!",
-				MessageDialogStyle.Affirmative);
+			implementFeature();
 		}
 
 		private void stopMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			// TODO - Implement find results window feature
-			(Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
-				Program.Title,
-				"Future!",
-				MessageDialogStyle.Affirmative);
+			implementFeature();
 		}
 
 		private void firmwareMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			// TODO - Implement find results window feature
-			(Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
-				Program.Title,
-				"Future!",
-				MessageDialogStyle.Affirmative);
+			implementFeature();
 		}
 
 		private void buildMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			// TODO - Implement find results window feature
-			(Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
-				Program.Title,
-				"Future!",
-				MessageDialogStyle.Affirmative);
+			implementFeature();
 		}
 
 		private void outputMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			// TODO - Implement close all windows feature
-			(Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
-				Program.Title,
-				"Future!",
-				MessageDialogStyle.Affirmative);
+			implementFeature();
 		}
 
 		#endregion Debug
@@ -926,6 +907,22 @@ namespace RuC.WPF
 					App.Language = lang;
 				}
 			}
+		}
+
+		private async void implementFeature()
+		{
+			//	Coming someday...
+			// TODO - Implement feature
+			Task<MessageDialogResult> dc = (Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
+				Program.Title,
+				"Future!",
+				MessageDialogStyle.Affirmative);
+
+			if (this.ActiveDocument != null)
+				this.ActiveDocument.Scintilla.Visibility = Visibility.Collapsed;
+			await dc;
+			if (this.ActiveDocument != null)
+				this.ActiveDocument.Scintilla.Visibility = Visibility.Visible;
 		}
 
 		#endregion Methods

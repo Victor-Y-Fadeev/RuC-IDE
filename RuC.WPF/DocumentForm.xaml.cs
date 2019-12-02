@@ -77,7 +77,7 @@ namespace RuC.WPF
 		{
 			if (Scintilla.Modified)
 			{
-				if (this.Scintilla.Visibility == Visibility.Hidden)
+				if (this.Scintilla.Visibility == Visibility.Collapsed)
 				{
 					return;
 				}
@@ -98,7 +98,7 @@ namespace RuC.WPF
 						});
 
 				e.Cancel = true;
-				this.Scintilla.Visibility = Visibility.Hidden;
+				this.Scintilla.Visibility = Visibility.Collapsed;
 				MessageDialogResult dr = await dc;
 				if (dr == MessageDialogResult.FirstAuxiliary)
 				{

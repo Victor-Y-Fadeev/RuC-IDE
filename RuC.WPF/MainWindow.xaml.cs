@@ -9,6 +9,7 @@ using System.Windows.Input;
 using ScintillaNET.WPF;
 using System.Windows.Media;
 using ScintillaNET_FindReplaceDialog;
+using System.Windows.Controls;
 
 namespace RuC.WPF
 {
@@ -84,6 +85,22 @@ namespace RuC.WPF
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			App.LanguageChanged += LanguageChanged;
+
+			CultureInfo currLang = App.Language;
+
+			language.Items.Clear();
+			foreach (var lang in App.Languages)
+			{
+				MenuItem menuLang = new MenuItem();
+				menuLang.Header = lang.NativeName.First().ToString().ToUpper() + lang.NativeName.Substring(1);
+				menuLang.Tag = lang;
+				menuLang.IsChecked = lang.Equals(currLang);
+				menuLang.Click += ChangeLanguageClick;
+				language.Items.Add(menuLang);
+			}
+
 			// TODO Why this has to be here, I have no idea.
 			// All I know is that it doesn't work properly
 			// if put in the xaml file.
@@ -831,6 +848,30 @@ namespace RuC.WPF
 			// DEFAULT FILE
 			//OpenFile("../../RuC.WPF/MainWindow.xaml.cs");
 			//OpenFile("../../RuC.WPF/DocumentForm.xaml.cs");
+		}
+
+		private void LanguageChanged(Object sender, EventArgs e)
+		{
+			CultureInfo currLang = App.Language;
+
+			foreach (MenuItem i in language.Items)
+			{
+				CultureInfo ci = i.Tag as CultureInfo;
+				i.IsChecked = ci != null && ci.Equals(currLang);
+			}
+		}
+
+		private void ChangeLanguageClick(Object sender, EventArgs e)
+		{
+			MenuItem mi = sender as MenuItem;
+			if (mi != null)
+			{
+				CultureInfo lang = mi.Tag as CultureInfo;
+				if (lang != null)
+				{
+					App.Language = lang;
+				}
+			}
 		}
 
 		#endregion Methods

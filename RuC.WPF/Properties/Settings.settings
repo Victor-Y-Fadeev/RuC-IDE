@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="DefaultLanguage" Type="System.Globalization.CultureInfo" Scope="User">
-      <Value Profile="(Default)">ru-RU</Value>
+      <Value Profile="(Default)">en-US</Value>
     </Setting>
   </Settings>
 </SettingsFile>

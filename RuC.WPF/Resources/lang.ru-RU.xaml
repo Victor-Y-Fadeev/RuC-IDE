@@ -52,6 +52,7 @@
     <v:String x:Key="m_FoldAll">Свернуть _все сегменты</v:String>
     <v:String x:Key="m_UnfoldAll">Развернуть все сегменты</v:String>
     <v:String x:Key="m_Window">_Окно</v:String>
+    <v:String x:Key="m_Language">_Язык</v:String>
     <v:String x:Key="m_BookmarkWindow">_Закрепить вкладку</v:String>
     <v:String x:Key="m_FindResults">_Результаты поиска</v:String>
     <!-- <v:String x:Key="m_Close">_Close</v:String> -->

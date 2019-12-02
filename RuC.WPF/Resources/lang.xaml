@@ -52,6 +52,7 @@
     <v:String x:Key="m_FoldAll">Fold _All</v:String>
     <v:String x:Key="m_UnfoldAll">Unfold A_ll</v:String>
     <v:String x:Key="m_Window">_Window</v:String>
+    <v:String x:Key="m_Language">Language</v:String>
     <v:String x:Key="m_BookmarkWindow">_Bookmark Window</v:String>
     <v:String x:Key="m_FindResults">_Find Results</v:String>
     <!-- <v:String x:Key="m_Close">_Close</v:String> -->

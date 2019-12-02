@@ -137,6 +137,10 @@
                         <MenuItem Name="incrementalSearchMenuItem" Click="incrementalSearchMenuItem_Click" Header="{DynamicResource m_IncrementalSearch}" />
                         <MenuItem Name="findMenuItem" Click="findMenuItem_Click" Header="{DynamicResource m_Find}" />
                         <MenuItem Name="replaceMenuItem" Click="replaceMenuItem_Click" Header="{DynamicResource m_Replace}" />
+                        <MenuItem Name="findInFilesMenuItem" Click="findInFilesMenuItem_Click" Header="{DynamicResource m_FindInFiles}"
+                              Visibility="Collapsed" />
+                        <MenuItem Name="replaceInFilesMenuItem" Click="replaceInFilesMenuItem_Click" Header="{DynamicResource m_ReplaceInFiles}"
+                              Visibility="Collapsed" />
                     </MenuItem>
                     <MenuItem Name="gotoMenuItem" Click="gotoMenuItem_Click" Header="{DynamicResource m_GoTo}" Foreground="{StaticResource menuItemBrush}" />
                     <Separator />
@@ -174,6 +178,8 @@
                     <MenuItem Name="unfoldAllMenuItem" Click="unfoldAllMenuItem_Click" Header="{DynamicResource m_UnfoldAll}" Foreground="{StaticResource menuItemBrush}" />
                 </MenuItem>
                 <MenuItem Header="{DynamicResource m_Window}" Background="Transparent" Foreground="White">
+                    <MenuItem Name="language" Header="{DynamicResource m_Language}" Foreground="{StaticResource menuItemBrush}" />
+                    <Separator />
                     <MenuItem Name="bookmarkWindowMenuItem" Click="bookmarkWindowMenuItem_Click" Header="{DynamicResource m_BookmarkWindow}"
                               Visibility="Collapsed" Foreground="{StaticResource menuItemBrush}" />
                     <MenuItem Name="findResultsMenuItem" Click="findResultsMenuItem_Click" Header="{DynamicResource m_FindResults}"

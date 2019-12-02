@@ -248,14 +248,14 @@ namespace RuC.WPF
 		{
 			// Coming someday...
 			// TODO - Implement findInFiles feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			implementFeature();
 		}
 
 		private void replaceInFilesMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			//	Coming someday...
 			// TODO - Implement replaceInFiles feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			implementFeature();
 		}
 
 		#endregion Find and Replace
@@ -508,13 +508,13 @@ namespace RuC.WPF
 		{
 			// These currently are hidden.
 			// TODO - Implement bookmark window feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			implementFeature();
 		}
 
 		private void findResultsMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			// TODO - Implement find results window feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			implementFeature();
 		}
 
 		private void closeWindowMenuItem_Click(object sender, RoutedEventArgs e)
@@ -526,7 +526,7 @@ namespace RuC.WPF
 		private void closeAllMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			// TODO - Implement close all windows feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			implementFeature();
 		}
 
 		#endregion Window
@@ -911,11 +911,9 @@ namespace RuC.WPF
 
 		private async void implementFeature()
 		{
-			//	Coming someday...
-			// TODO - Implement feature
 			Task<MessageDialogResult> dc = (Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
 				Program.Title,
-				"Future!",
+				Application.Current.Resources["m_Future"].ToString(),
 				MessageDialogStyle.Affirmative);
 
 			if (this.ActiveDocument != null)

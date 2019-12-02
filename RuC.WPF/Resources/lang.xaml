@@ -80,6 +80,8 @@
     <v:String x:Key="m_ShiftF5">Stop (Shift+F5)</v:String>
     <v:String x:Key="m_CtrlB">Upload (Ctrl+B)</v:String>
 
+    <v:String x:Key="m_Future">Future!</v:String>
+
     <!-- About window -->
     <v:String x:Key="m_AboutWindow">About Russian C IDE</v:String>
 

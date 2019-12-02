@@ -18,10 +18,10 @@
         <CommandBinding Command="{x:Static my:MainWindow.CopyCommand}" Executed="copyMenuItem_Click" />
         <CommandBinding Command="{x:Static my:MainWindow.PasteCommand}" Executed="pasteMenuItem_Click" />
         <CommandBinding Command="{x:Static my:MainWindow.SelectAllCommand}" Executed="selectAllMenuItem_Click" />
-        <CommandBinding Command="{x:Static my:MainWindow.IncrementalSearchCommand}" Executed="incrementalSearchMenuItem_Click" />
-        <CommandBinding Command="{x:Static my:MainWindow.FindCommand}" Executed="findMenuItem_Click" />
-        <CommandBinding Command="{x:Static my:MainWindow.ReplaceCommand}" Executed="replaceMenuItem_Click" />
-        <CommandBinding Command="{x:Static my:MainWindow.GotoCommand}" Executed="gotoMenuItem_Click" />
+        <!-- CommandBinding Command="{x:Static my:MainWindow.IncrementalSearchCommand}" Executed="incrementalSearchMenuItem_Click" / -->
+        <!-- CommandBinding Command="{x:Static my:MainWindow.FindCommand}" Executed="findMenuItem_Click" / -->
+        <!-- CommandBinding Command="{x:Static my:MainWindow.ReplaceCommand}" Executed="replaceMenuItem_Click" / -->
+        <!-- CommandBinding Command="{x:Static my:MainWindow.GotoCommand}" Executed="gotoMenuItem_Click" / -->
         <CommandBinding Command="{x:Static my:MainWindow.RunCommand}" Executed="runMenuItem_Click" />
         <CommandBinding Command="{x:Static my:MainWindow.StopCommand}" Executed="stopMenuItem_Click" />
         <CommandBinding Command="{x:Static my:MainWindow.OutputCommand}" Executed="outputMenuItem_Click" />
@@ -60,18 +60,18 @@
         <KeyBinding Key="A"
                     Command="{x:Static my:MainWindow.SelectAllCommand}"
                     Modifiers="Ctrl" />
-        <KeyBinding Key="I"
+        <!-- KeyBinding Key="I"
                     Command="{x:Static my:MainWindow.IncrementalSearchCommand}"
-                    Modifiers="Ctrl" />
-        <KeyBinding Key="F"
+                    Modifiers="Ctrl" / -->
+        <!-- KeyBinding Key="F"
                     Command="{x:Static my:MainWindow.FindCommand}"
-                    Modifiers="Ctrl" />
-        <KeyBinding Key="H"
+                    Modifiers="Ctrl" / -->
+        <!-- KeyBinding Key="H"
                     Command="{x:Static my:MainWindow.ReplaceCommand}"
-                    Modifiers="Ctrl" />
-        <KeyBinding Key="G"
+                    Modifiers="Ctrl" / -->
+        <!-- KeyBinding Key="G"
                     Command="{x:Static my:MainWindow.GotoCommand}"
-                    Modifiers="Ctrl" />
+                    Modifiers="Ctrl" / -->
         <KeyBinding Key="F5"
                     Command="{x:Static my:MainWindow.RunCommand}"
                     Modifiers="" />

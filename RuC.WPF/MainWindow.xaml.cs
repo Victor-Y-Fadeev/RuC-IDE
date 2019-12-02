@@ -71,10 +71,10 @@ namespace RuC.WPF
 		public static RoutedCommand CopyCommand = new RoutedCommand();
 		public static RoutedCommand PasteCommand = new RoutedCommand();
 		public static RoutedCommand SelectAllCommand = new RoutedCommand();
-		public static RoutedCommand IncrementalSearchCommand = new RoutedCommand();
-		public static RoutedCommand FindCommand = new RoutedCommand();
-		public static RoutedCommand ReplaceCommand = new RoutedCommand();
-		public static RoutedCommand GotoCommand = new RoutedCommand();
+		// public static RoutedCommand IncrementalSearchCommand = new RoutedCommand();
+		// public static RoutedCommand FindCommand = new RoutedCommand();
+		// public static RoutedCommand ReplaceCommand = new RoutedCommand();
+		// public static RoutedCommand GotoCommand = new RoutedCommand();
 		public static RoutedCommand RunCommand = new RoutedCommand();
 		public static RoutedCommand StopCommand = new RoutedCommand();
 		public static RoutedCommand OutputCommand = new RoutedCommand();

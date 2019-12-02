@@ -133,7 +133,7 @@
                     <MenuItem Name="selectAllMenuItem" Click="selectAllMenuItem_Click" Header="{DynamicResource m_SelectAll}" Foreground="{StaticResource menuItemBrush}" />
                     <MenuItem Name="clearSelection" Click="clearSelectionMenuItem_Click" Header="{DynamicResource m_ClearSelection}" Foreground="{StaticResource menuItemBrush}" />
                     <Separator />
-                    <MenuItem Header="{DynamicResource m_FindAndReplace}" Foreground="{StaticResource menuItemBrush}">
+                    <MenuItem Header="{DynamicResource m_FindAndReplace}" Foreground="{StaticResource menuItemBrush}" Visibility="Collapsed">
                         <MenuItem Name="incrementalSearchMenuItem" Click="incrementalSearchMenuItem_Click" Header="{DynamicResource m_IncrementalSearch}" />
                         <MenuItem Name="findMenuItem" Click="findMenuItem_Click" Header="{DynamicResource m_Find}" />
                         <MenuItem Name="replaceMenuItem" Click="replaceMenuItem_Click" Header="{DynamicResource m_Replace}" />
@@ -142,8 +142,9 @@
                         <MenuItem Name="replaceInFilesMenuItem" Click="replaceInFilesMenuItem_Click" Header="{DynamicResource m_ReplaceInFiles}"
                               Visibility="Collapsed" />
                     </MenuItem>
-                    <MenuItem Name="gotoMenuItem" Click="gotoMenuItem_Click" Header="{DynamicResource m_GoTo}" Foreground="{StaticResource menuItemBrush}" />
-                    <Separator />
+                    <MenuItem Name="gotoMenuItem" Click="gotoMenuItem_Click" Header="{DynamicResource m_GoTo}" Foreground="{StaticResource menuItemBrush}"
+                              Visibility="Collapsed" />
+                    <Separator Visibility="Collapsed" />
                     <MenuItem Header="{DynamicResource m_Bookmarks}" Foreground="{StaticResource menuItemBrush}">
                         <MenuItem Name="toggleBookmarkMenuItem" Click="toggleBookmarkMenuItem_Click" Header="{DynamicResource m_ToggleBookmark}" />
                         <MenuItem Name="previousBookmarkMenuItem" Click="previousBookmarkMenuItem_Click" Header="{DynamicResource m_PreviousBookmark}" />

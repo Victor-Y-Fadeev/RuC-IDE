@@ -51,6 +51,13 @@
     <v:String x:Key="m_UnfoldLevel">Развернуть сегмент</v:String>
     <v:String x:Key="m_FoldAll">Свернуть _все сегменты</v:String>
     <v:String x:Key="m_UnfoldAll">Развернуть все сегменты</v:String>
+    <v:String x:Key="m_Debug">От_ладка</v:String>
+    <v:String x:Key="m_Run">_Запустить</v:String>
+    <v:String x:Key="m_Break">Пр_ервать</v:String>
+    <v:String x:Key="m_Stop">Оста_новить</v:String>
+    <v:String x:Key="m_Build">Со_брать</v:String>
+    <v:String x:Key="m_Upload">Загрузить</v:String>
+    <v:String x:Key="m_UpdateFirmware">Обновить прошивку</v:String>
     <v:String x:Key="m_Window">_Окно</v:String>
     <v:String x:Key="m_Language">_Язык</v:String>
     <v:String x:Key="m_BookmarkWindow">_Закрепить вкладку</v:String>
@@ -69,6 +76,11 @@
     <v:String x:Key="m_CtrlV">Вставить (Ctrl+V)</v:String>
     <v:String x:Key="m_CtrlZ">Отменить (Ctrl+Z)</v:String>
     <v:String x:Key="m_CtrlY">Вернуть (Ctrl+Y)</v:String>
+    <v:String x:Key="m_F5">Запустить (F5)</v:String>
+    <v:String x:Key="m_ShiftF5">Остановить (Shift+F5)</v:String>
+    <v:String x:Key="m_CtrlB">Загрузить (Ctrl+B)</v:String>
+
+    <v:String x:Key="m_Future">В будущем!</v:String>
 
     <!-- About window -->
     <v:String x:Key="m_AboutWindow">О программе Russian C IDE</v:String>

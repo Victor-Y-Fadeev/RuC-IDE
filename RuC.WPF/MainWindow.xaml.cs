@@ -10,6 +10,9 @@ using ScintillaNET.WPF;
 using System.Windows.Media;
 using ScintillaNET_FindReplaceDialog;
 using System.Windows.Controls;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+using System.Threading.Tasks;
 
 namespace RuC.WPF
 {
@@ -69,10 +72,13 @@ namespace RuC.WPF
 		public static RoutedCommand CopyCommand = new RoutedCommand();
 		public static RoutedCommand PasteCommand = new RoutedCommand();
 		public static RoutedCommand SelectAllCommand = new RoutedCommand();
-		public static RoutedCommand IncrementalSearchCommand = new RoutedCommand();
-		public static RoutedCommand FindCommand = new RoutedCommand();
-		public static RoutedCommand ReplaceCommand = new RoutedCommand();
-		public static RoutedCommand GotoCommand = new RoutedCommand();
+		// public static RoutedCommand IncrementalSearchCommand = new RoutedCommand();
+		// public static RoutedCommand FindCommand = new RoutedCommand();
+		// public static RoutedCommand ReplaceCommand = new RoutedCommand();
+		// public static RoutedCommand GotoCommand = new RoutedCommand();
+		public static RoutedCommand RunCommand = new RoutedCommand();
+		public static RoutedCommand StopCommand = new RoutedCommand();
+		public static RoutedCommand OutputCommand = new RoutedCommand();
 
 		private const string ProductName = "Russian C IDE";
 
@@ -90,7 +96,7 @@ namespace RuC.WPF
 
 			CultureInfo currLang = App.Language;
 
-			language.Items.Clear();
+			languageMenuItem.Items.Clear();
 			foreach (var lang in App.Languages)
 			{
 				MenuItem menuLang = new MenuItem();
@@ -98,7 +104,7 @@ namespace RuC.WPF
 				menuLang.Tag = lang;
 				menuLang.IsChecked = lang.Equals(currLang);
 				menuLang.Click += ChangeLanguageClick;
-				language.Items.Add(menuLang);
+				languageMenuItem.Items.Add(menuLang);
 			}
 
 			// TODO Why this has to be here, I have no idea.
@@ -242,14 +248,14 @@ namespace RuC.WPF
 		{
 			// Coming someday...
 			// TODO - Implement findInFiles feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			implementFeature();
 		}
 
 		private void replaceInFilesMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			//	Coming someday...
 			// TODO - Implement replaceInFiles feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			implementFeature();
 		}
 
 		#endregion Find and Replace
@@ -467,19 +473,48 @@ namespace RuC.WPF
 
 		#endregion View
 
+		#region Debug
+
+		private void runMenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			implementFeature();
+		}
+
+		private void stopMenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			implementFeature();
+		}
+
+		private void firmwareMenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			implementFeature();
+		}
+
+		private void buildMenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			implementFeature();
+		}
+
+		private void outputMenuItem_Click(object sender, RoutedEventArgs e)
+		{
+			implementFeature();
+		}
+
+		#endregion Debug
+
 		#region Window
 
 		private void bookmarkWindowMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			// These currently are hidden.
 			// TODO - Implement bookmark window feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			implementFeature();
 		}
 
 		private void findResultsMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			// TODO - Implement find results window feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			implementFeature();
 		}
 
 		private void closeWindowMenuItem_Click(object sender, RoutedEventArgs e)
@@ -491,7 +526,7 @@ namespace RuC.WPF
 		private void closeAllMenuItem_Click(object sender, RoutedEventArgs e)
 		{
 			// TODO - Implement close all windows feature
-			MessageBox.Show("Future!", ProductName, MessageBoxButton.OK, MessageBoxImage.Information);
+			implementFeature();
 		}
 
 		#endregion Window
@@ -854,7 +889,7 @@ namespace RuC.WPF
 		{
 			CultureInfo currLang = App.Language;
 
-			foreach (MenuItem i in language.Items)
+			foreach (MenuItem i in languageMenuItem.Items)
 			{
 				CultureInfo ci = i.Tag as CultureInfo;
 				i.IsChecked = ci != null && ci.Equals(currLang);
@@ -872,6 +907,20 @@ namespace RuC.WPF
 					App.Language = lang;
 				}
 			}
+		}
+
+		private async void implementFeature()
+		{
+			Task<MessageDialogResult> dc = (Application.Current.MainWindow as MetroWindow).ShowMessageAsync(
+				Program.Title,
+				Application.Current.Resources["m_Future"].ToString(),
+				MessageDialogStyle.Affirmative);
+
+			if (this.ActiveDocument != null)
+				this.ActiveDocument.Scintilla.Visibility = Visibility.Collapsed;
+			await dc;
+			if (this.ActiveDocument != null)
+				this.ActiveDocument.Scintilla.Visibility = Visibility.Visible;
 		}
 
 		#endregion Methods

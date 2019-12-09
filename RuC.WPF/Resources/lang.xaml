@@ -51,6 +51,13 @@
     <v:String x:Key="m_UnfoldLevel">_Unfold Level</v:String>
     <v:String x:Key="m_FoldAll">Fold _All</v:String>
     <v:String x:Key="m_UnfoldAll">Unfold A_ll</v:String>
+    <v:String x:Key="m_Debug">_Debug</v:String>
+    <v:String x:Key="m_Run">_Run</v:String>
+    <v:String x:Key="m_Break">Brea_k</v:String>
+    <v:String x:Key="m_Stop">_Stop</v:String>
+    <v:String x:Key="m_Build">_Build</v:String>
+    <v:String x:Key="m_Upload">Upload</v:String>
+    <v:String x:Key="m_UpdateFirmware">Update Firmware</v:String>
     <v:String x:Key="m_Window">_Window</v:String>
     <v:String x:Key="m_Language">Language</v:String>
     <v:String x:Key="m_BookmarkWindow">_Bookmark Window</v:String>
@@ -69,6 +76,11 @@
     <v:String x:Key="m_CtrlV">Paste (Ctrl+V)</v:String>
     <v:String x:Key="m_CtrlZ">Undo (Ctrl+Z)</v:String>
     <v:String x:Key="m_CtrlY">Redo (Ctrl+Y)</v:String>
+    <v:String x:Key="m_F5">Run (F5)</v:String>
+    <v:String x:Key="m_ShiftF5">Stop (Shift+F5)</v:String>
+    <v:String x:Key="m_CtrlB">Upload (Ctrl+B)</v:String>
+
+    <v:String x:Key="m_Future">Future!</v:String>
 
     <!-- About window -->
     <v:String x:Key="m_AboutWindow">About Russian C IDE</v:String>

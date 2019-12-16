@@ -310,8 +310,9 @@
                         <ad:Windows10Theme />
                     </ad:DockingManager.Theme>
                     <ad:LayoutRoot>
-                        <ad:LayoutPanel>
+                        <ad:LayoutPanel Orientation="Vertical">
                             <ad:LayoutDocumentPane x:Name="documentsRoot" IsMaximized="True" />
+                            <ad:LayoutAnchorablePane x:Name="outputRoot" />
                         </ad:LayoutPanel>
                     </ad:LayoutRoot>
                 </ad:DockingManager>

@@ -13,6 +13,7 @@ using System.Windows.Controls;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using System.Threading.Tasks;
+using Xceed.Wpf.AvalonDock.Layout;
 
 namespace RuC.WPF
 {
@@ -477,7 +478,13 @@ namespace RuC.WPF
 
 		private void runMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			implementFeature();
+			//implementFeature();
+
+			LayoutAnchorable item = new LayoutAnchorable();
+			item.Title = "Build";
+			outputRoot.Children.Add(item);
+			//item.DockAsDocument();
+			item.IsActive = true;
 		}
 
 		private void stopMenuItem_Click(object sender, RoutedEventArgs e)

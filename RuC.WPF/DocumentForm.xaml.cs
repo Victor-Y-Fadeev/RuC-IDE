@@ -77,7 +77,7 @@ namespace RuC.WPF
 		{
 			if (Scintilla.Modified)
 			{
-				if (this.Scintilla.Visibility == Visibility.Collapsed)
+				if ((Application.Current.MainWindow as MainWindow).dockPanel.Visibility == Visibility.Collapsed)
 				{
 					return;
 				}
@@ -98,12 +98,12 @@ namespace RuC.WPF
 						});
 
 				e.Cancel = true;
-				this.Scintilla.Visibility = Visibility.Collapsed;
+				(Application.Current.MainWindow as MainWindow).dockPanel.Visibility = Visibility.Collapsed;
 				MessageDialogResult dr = await dc;
 				if (dr == MessageDialogResult.FirstAuxiliary)
 				{
 					// Stop closing
-					this.Scintilla.Visibility = Visibility.Visible;
+					(Application.Current.MainWindow as MainWindow).dockPanel.Visibility = Visibility.Visible;
 					return;
 				}
 
@@ -114,6 +114,8 @@ namespace RuC.WPF
 					e.Cancel = !Save();
 				}
 				this.Close();
+
+				(Application.Current.MainWindow as MainWindow).dockPanel.Visibility = Visibility.Visible;
 			}
 
 			// Close as normal

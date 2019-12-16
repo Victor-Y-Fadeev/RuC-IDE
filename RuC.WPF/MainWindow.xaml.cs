@@ -484,7 +484,7 @@ namespace RuC.WPF
 			item.Title = "Build";
 			outputRoot.Children.Add(item);
 			//item.DockAsDocument();
-			item.IsActive = true;
+			//item.IsActive = true;
 		}
 
 		private void stopMenuItem_Click(object sender, RoutedEventArgs e)
@@ -923,11 +923,9 @@ namespace RuC.WPF
 				Application.Current.Resources["m_Future"].ToString(),
 				MessageDialogStyle.Affirmative);
 
-			if (this.ActiveDocument != null)
-				this.ActiveDocument.Scintilla.Visibility = Visibility.Collapsed;
+			this.dockPanel.Visibility = Visibility.Collapsed;
 			await dc;
-			if (this.ActiveDocument != null)
-				this.ActiveDocument.Scintilla.Visibility = Visibility.Visible;
+			this.dockPanel.Visibility = Visibility.Visible;
 		}
 
 		#endregion Methods

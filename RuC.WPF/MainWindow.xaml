@@ -312,7 +312,7 @@
                     <ad:LayoutRoot>
                         <ad:LayoutPanel Orientation="Vertical">
                             <ad:LayoutDocumentPane x:Name="documentsRoot" IsMaximized="True" />
-                            <ad:LayoutAnchorablePane x:Name="outputRoot" />
+                            <ad:LayoutAnchorablePane x:Name="outputRoot" DockMinHeight="150" />
                         </ad:LayoutPanel>
                     </ad:LayoutRoot>
                 </ad:DockingManager>

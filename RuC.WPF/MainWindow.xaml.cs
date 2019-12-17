@@ -887,6 +887,10 @@ namespace RuC.WPF
 			//this.Title = ProductName;
 			this.TitleAlignment = HorizontalAlignment.Center;
 
+			LayoutAnchorable item = new LayoutAnchorable();
+			outputRoot.Children.Add(item);
+			item.Hide();
+
 			// DEFAULT FILE
 			//OpenFile("../../RuC.WPF/MainWindow.xaml.cs");
 			//OpenFile("../../RuC.WPF/DocumentForm.xaml.cs");

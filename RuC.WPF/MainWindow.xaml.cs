@@ -478,13 +478,18 @@ namespace RuC.WPF
 
 		private void runMenuItem_Click(object sender, RoutedEventArgs e)
 		{
-			//implementFeature();
+			if (ActiveDocument == null)
+				return;
 
 			LayoutAnchorable item = new LayoutAnchorable();
-			item.Title = "Build";
+			item.Title = Application.Current.Resources["m_LogBuild"].ToString();
+
+			TextBox text = new TextBox();
+			text.Text = ActiveDocument.Scintilla.Text;
+			item.Content = text;
 			outputRoot.Children.Add(item);
 			//item.DockAsDocument();
-			//item.IsActive = true;
+			item.IsActive = true;
 		}
 
 		private void stopMenuItem_Click(object sender, RoutedEventArgs e)
@@ -714,7 +719,7 @@ namespace RuC.WPF
 			SetScintillaToCurrentOptions(doc);
 			doc.Title = String.Format(CultureInfo.CurrentCulture, "{0}{1}", NEW_DOCUMENT_TEXT, ++_newDocumentCount);
 			documentsRoot.Children.Add(doc);
-			doc.DockAsDocument();
+			//doc.DockAsDocument();
 			doc.IsActive = true;
 
 			return doc;
@@ -756,7 +761,7 @@ namespace RuC.WPF
 			doc.Title = Path.GetFileName(filePath);
 			doc.FilePath = filePath;
 			documentsRoot.Children.Add(doc);
-			doc.DockAsDocument();
+			//doc.DockAsDocument();
 			doc.IsActive = true;
 			//incrementalSearcher.Scintilla = doc.Scintilla;
 

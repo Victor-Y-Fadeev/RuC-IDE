@@ -80,6 +80,8 @@
     <v:String x:Key="m_ShiftF5">Остановить (Shift+F5)</v:String>
     <v:String x:Key="m_CtrlB">Загрузить (Ctrl+B)</v:String>
 
+    <v:String x:Key="m_LogBuild">Сборка</v:String>
+    <v:String x:Key="m_LogOutput">Вывод</v:String>
     <v:String x:Key="m_Future">В будущем!</v:String>
 
     <!-- About window -->

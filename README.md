@@ -1,4 +1,4 @@
-# <img src="https://drive.google.com/uc?export=view&id=1sv2C2hSF_gPG1aPBRbuoAVPdrvBn9tOC" height="32" /> Russian C IDE
+# ![Logo](RuC.WPF/Images/Repository.png) Russian C IDE
 
 Данный репозиторий посвящен созданию IDE для языка [RuC](https://github.com/andrey-terekhov/RuC),
 разработанного [Андреем Николаевичем Тереховым](https://github.com/andrey-terekhov)
